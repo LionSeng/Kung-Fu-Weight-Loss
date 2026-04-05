@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>武道燃脂 · 8周武术减脂训练计划</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables & Reset ===== */
+:root {
+  --bg-primary: #F5F7FA;
+  --bg-secondary: #EBEDF2;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8F9FB;
+  --bg-elevated: #FFFFFF;
+  --green: #10B981;
+  --green-light: #D1FAE5;
+  --green-bg: rgba(16,185,129,0.08);
+  --blue: #3B82F6;
+  --blue-light: #DBEAFE;
+  --blue-bg: rgba(59,130,246,0.08);
+  --orange: #F59E0B;
+  --orange-light: #FEF3C7;
+  --orange-bg: rgba(245,158,11,0.08);
+  --red: #EF4444;
+  --red-light: #FEE2E2;
+  --red-bg: rgba(239,68,68,0.08);
+  --yellow: #FBBF24;
+  --yellow-light: #FEF9C3;
+  --purple: #8B5CF6;
+  --purple-light: #EDE9FE;
+  --purple-bg: rgba(139,92,246,0.08);
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+  --text-muted: #A0AEC0;
+  --border: rgba(0,0,0,0.06);
+  --border-strong: rgba(0,0,0,0.12);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-green: 0 2px 12px rgba(16,185,129,0.15);
+  --shadow-blue: 0 2px 12px rgba(59,130,246,0.15);
+  --shadow-orange: 0 2px 12px rgba(245,158,11,0.15);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(16,185,129,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(59,130,246,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(245,158,11,0.03) 0%, transparent 50%);
+  z-index: 0;
+  animation: bgDrift 30s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes bgDrift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-2%, -1%) rotate(1deg); }
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 4px; }
+
+.app {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px 120px;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 32px 0 16px;
+}
+
+.header-badge {
+  display: inline-block;
+  padding: 5px 16px;
+  background: var(--green-bg);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.3;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ===== Stats Row ===== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.stat-value { font-size: 24px; font-weight: 900; line-height: 1; }
+.stat-value.green { color: var(--green); }
+.stat-value.blue { color: var(--blue); }
+.stat-value.orange { color: var(--orange); }
+.stat-label { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+
+/* ===== Progress Bar ===== */
+.progress-section { margin: 16px 0; }
+.progress-label {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px; font-size: 13px;
+}
+.progress-label span:first-child { color: var(--text-secondary); }
+.progress-label span:last-child { color: var(--green); font-weight: 700; }
+.progress-bar {
+  width: 100%; height: 8px;
+  background: var(--bg-secondary);
+  border-radius: 4px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-green);
+}
+
+/* ===== Tab Navigation ===== */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 6px;
+  margin: 16px 0 12px;
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text-secondary); background: var(--bg-secondary); }
+.tab-btn.active {
+  background: var(--bg-card);
+  color: var(--green);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+}
+
+/* ===== Tab Content ===== */
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeInUp 0.3s ease; }
+
+/* ===== Card Base ===== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+.card h3 {
+  font-size: 15px; font-weight: 700; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.card h3 .icon { font-size: 18px; }
+
+/* ===== Week Selector ===== */
+.week-selector {
+  display: flex; gap: 6px; overflow-x: auto; padding: 4px 0 10px;
+  scrollbar-width: none;
+}
+.week-selector::-webkit-scrollbar { display: none; }
+.week-btn {
+  flex-shrink: 0; padding: 9px 16px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xs); color: var(--text-muted);
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  transition: var(--transition); white-space: nowrap;
+}
+.week-btn:hover { background: var(--bg-card-hover); color: var(--text-secondary); }
+.week-btn.active {
+  background: var(--green-bg); border-color: rgba(16,185,129,0.3);
+  color: var(--green); box-shadow: var(--shadow-green);
+}
+
+/* ===== Day Cards ===== */
+.day-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 12px 0;
+}
+.day-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xs); padding: 10px 4px;
+  text-align: center; cursor: pointer; transition: var(--transition); position: relative;
+}
+.day-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.day-card.rest { opacity: 0.4; cursor: default; }
+.day-card.rest:hover { transform: none; box-shadow: none; }
+.day-card.active {
+  border-color: var(--green); background: var(--green-bg);
+  box-shadow: var(--shadow-green);
+}
+.day-card.completed::after {
+  content: '✓'; position: absolute; top: 3px; right: 3px;
+  width: 16px; height: 16px; background: var(--green); color: #fff;
+  border-radius: 50%; font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.day-name { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; }
+.day-type-icon { font-size: 20px; margin-bottom: 2px; }
+.day-title { font-size: 10px; color: var(--text-secondary); line-height: 1.2; }
+
+/* ===== Training Detail ===== */
+.training-detail { margin: 20px 0; }
+.detail-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+}
+.detail-title { font-size: 18px; font-weight: 700; }
+.detail-meta { display: flex; gap: 8px; }
+.meta-tag {
+  font-size: 12px; color: var(--text-muted);
+  padding: 4px 10px; background: var(--bg-secondary); border-radius: 6px;
+}
+
+.phase-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 10px; overflow: hidden;
+  transition: var(--transition); box-shadow: var(--shadow-sm);
+}
+.phase-card:hover { border-color: var(--border-strong); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.phase-header {
+  display: flex; align-items: center; gap: 10px; padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.phase-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.phase-dot.warmup { background: var(--orange); box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+.phase-dot.tech { background: var(--blue); box-shadow: 0 0 6px rgba(59,130,246,0.4); }
+.phase-dot.fitness { background: var(--green); box-shadow: 0 0 6px rgba(16,185,129,0.4); }
+.phase-dot.stretch { background: var(--yellow); box-shadow: 0 0 6px rgba(251,191,36,0.4); }
+.phase-name { font-weight: 700; font-size: 14px; flex: 1; }
+.phase-time {
+  font-size: 12px; color: var(--text-muted);
+  background: var(--bg-secondary); padding: 3px 10px; border-radius: 6px;
+}
+.exercise-list { padding: 6px 16px 14px; }
+.exercise-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; border-bottom: 1px solid var(--border);
+}
+.exercise-item:last-child { border-bottom: none; }
+.exercise-name { font-size: 14px; color: var(--text-primary); }
+.exercise-detail { font-size: 12px; color: var(--text-muted); text-align: right; }
+.exercise-detail em { font-style: normal; color: var(--blue); font-weight: 600; }
+.exercise-alt {
+  font-size: 11px; color: var(--orange); font-weight: 500;
+  padding: 2px 0; display: flex; align-items: flex-start; gap: 4px;
+}
+
+/* ===== Training Adaptation Badge ===== */
+.adapt-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+  margin: 0 0 12px;
+}
+.adapt-badge.obese { background: var(--red-light); color: var(--red); }
+.adapt-badge.overweight { background: var(--orange-light); color: var(--orange); }
+.adapt-badge.normal { background: var(--green-light); color: var(--green); }
+.adapt-badge.underweight { background: var(--yellow-light); color: #D97706; }
+.adapt-badge.no-profile { background: var(--blue-light); color: var(--blue); }
+
+.adapt-info-card {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(139,92,246,0.06));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px; margin-bottom: 12px;
+  font-size: 13px; color: var(--text-secondary); line-height: 1.6;
+}
+.adapt-info-card strong { color: var(--text-primary); }
+.adapt-info-card .go-diet-link {
+  color: var(--blue); font-weight: 600; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.adapt-info-card .go-diet-link:hover { color: #2563EB; }
+
+/* ===== Checkin Button ===== */
+.checkin-btn {
+  width: 100%; padding: 16px;
+  background: linear-gradient(135deg, var(--green), #059669);
+  border: none; border-radius: var(--radius);
+  color: #fff; font-size: 16px; font-weight: 700;
+  cursor: pointer; transition: var(--transition);
+  position: relative; overflow: hidden; margin: 16px 0;
+}
+.checkin-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.3); }
+.checkin-btn:active { transform: translateY(0); }
+.checkin-btn.completed {
+  background: var(--green-bg); color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+.checkin-btn .ripple {
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  animation: rippleEffect 0.6s linear; pointer-events: none;
+}
+@keyframes rippleEffect {
+  from { width: 0; height: 0; opacity: 1; }
+  to { width: 300px; height: 300px; opacity: 0; }
+}
+
+/* ===== Diet Section (Tab) ===== */
+.diet-list { list-style: none; }
+.diet-list li {
+  padding: 7px 0; font-size: 14px; color: var(--text-secondary);
+  border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px;
+}
+.diet-list li:last-child { border-bottom: none; }
+.diet-list li::before {
+  content: '·'; color: var(--green); font-weight: 900;
+  font-size: 18px; line-height: 1.2; flex-shrink: 0;
+}
+
+/* ===== Tips Section ===== */
+.tip-card ul { list-style: none; margin-top: 6px; }
+.tip-card ul li {
+  padding: 5px 0; font-size: 14px; color: var(--text-secondary);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.tip-card ul li::before {
+  content: '▸'; color: var(--orange); font-weight: 700; flex-shrink: 0;
+}
+.tip-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.warning-box {
+  background: var(--red-bg); border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius-xs); padding: 12px; margin-top: 10px;
+}
+.warning-box p { color: var(--red); font-size: 13px; }
+
+/* Personalized Guide Styles */
+.guide-profile-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0;
+}
+.guide-profile-item {
+  background: var(--bg-secondary); border-radius: var(--radius-xs); padding: 12px; text-align: center;
+}
+.guide-profile-item .gp-val { font-size: 20px; font-weight: 900; }
+.guide-profile-item .gp-lbl { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.guide-sport-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin: 3px;
+}
+.guide-sport-tag.recommend { background: var(--green-bg); color: var(--green); }
+.guide-sport-tag.avoid { background: var(--red-bg); color: var(--red); }
+.guide-sport-tag.caution { background: var(--orange-bg); color: var(--orange); }
+
+.guide-week-row {
+  display: grid; grid-template-columns: 42px 1fr 50px; gap: 6px;
+  align-items: center; padding: 8px 0;
+  border-bottom: 1px solid var(--border); font-size: 13px;
+}
+.guide-week-row:last-child { border-bottom: none; }
+.guide-week-row .gwr-day { font-weight: 600; color: var(--text-secondary); text-align: center; }
+.guide-week-row .gwr-type { color: var(--text-muted); }
+.guide-week-row .gwr-icon { text-align: center; font-size: 18px; }
+.guide-week-row.rest-row { opacity: 0.45; }
+.guide-week-row .gwr-rest { color: var(--text-muted); font-style: italic; }
+
+/* ===== Progress Section ===== */
+.progress-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;
+}
+.progress-stat-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px; text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.progress-stat-card .big-num { font-size: 32px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
+.progress-stat-card .desc { font-size: 12px; color: var(--text-muted); }
+.weekly-chart {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px; margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.weekly-chart h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+.chart-bars {
+  display: flex; align-items: flex-end; justify-content: space-around;
+  height: 120px; gap: 6px;
+}
+.chart-bar-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  flex: 1; height: 100%; justify-content: flex-end;
+}
+.chart-bar {
+  width: 100%; max-width: 32px;
+  background: linear-gradient(180deg, var(--green), rgba(16,185,129,0.3));
+  border-radius: 6px 6px 4px 4px;
+  transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 4px;
+}
+.chart-bar.rest-bar { background: linear-gradient(180deg, var(--text-muted), rgba(160,174,192,0.2)); }
+.chart-label { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+
+/* ===== Empty State ===== */
+.empty-state { text-align: center; padding: 36px 20px; color: var(--text-muted); }
+.empty-state .icon { font-size: 44px; margin-bottom: 10px; }
+.empty-state p { font-size: 14px; }
+
+/* ===== Success Overlay ===== */
+@keyframes checkPop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.success-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.success-overlay.show { opacity: 1; pointer-events: auto; }
+.success-content { text-align: center; animation: checkPop 0.5s ease forwards; }
+.success-check {
+  width: 80px; height: 80px; background: var(--green); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px; font-size: 40px; box-shadow: 0 0 30px rgba(16,185,129,0.4);
+  color: #fff;
+}
+.success-text { font-size: 20px; font-weight: 700; color: #fff; }
+.success-sub { font-size: 14px; color: rgba(255,255,255,0.8); margin-top: 6px; }
+
+/* ===== Calendar Tab ===== */
+.cal-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px; padding: 0 4px;
+}
+.cal-nav button {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xs); padding: 8px 14px;
+  font-size: 14px; cursor: pointer; color: var(--text-secondary);
+  transition: var(--transition);
+}
+.cal-nav button:hover { background: var(--bg-secondary); }
+.cal-nav .cal-title { font-size: 16px; font-weight: 700; }
+.cal-weekdays {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px;
+  margin-bottom: 4px; text-align: center;
+}
+.cal-weekdays span {
+  font-size: 11px; font-weight: 600; color: var(--text-muted); padding: 6px 0;
+}
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+}
+.cal-day {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-xs); font-size: 13px; font-weight: 500;
+  color: var(--text-secondary); position: relative; transition: var(--transition);
+}
+.cal-day.empty { visibility: hidden; }
+.cal-day.today {
+  border: 2px solid var(--blue); color: var(--blue); font-weight: 700;
+}
+.cal-day.checked::after {
+  content: ''; position: absolute; bottom: 4px;
+  width: 6px; height: 6px; background: var(--green); border-radius: 50%;
+}
+.cal-day.missed::after {
+  content: ''; position: absolute; bottom: 4px;
+  width: 6px; height: 6px; background: var(--red); border-radius: 50%;
+}
+.cal-day.rest-day { color: var(--text-muted); opacity: 0.5; }
+.cal-day.future { color: var(--text-muted); opacity: 0.4; }
+.cal-legend {
+  display: flex; gap: 16px; justify-content: center; margin: 14px 0;
+  font-size: 12px; color: var(--text-muted);
+}
+.cal-legend span { display: flex; align-items: center; gap: 5px; }
+.cal-legend .dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.cal-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px;
+}
+.cal-stat {
+  background: var(--bg-secondary); border-radius: var(--radius-xs); padding: 12px;
+  text-align: center;
+}
+.cal-stat .num { font-size: 22px; font-weight: 900; }
+.cal-stat .label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+/* ===== Weight Tracker Tab ===== */
+.bmi-card {
+  background: linear-gradient(135deg, var(--green-bg), var(--blue-bg));
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; margin-bottom: 12px; text-align: center;
+}
+.bmi-value { font-size: 42px; font-weight: 900; color: var(--green); }
+.bmi-label { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+.bmi-tag {
+  display: inline-block; margin-top: 6px; padding: 3px 14px;
+  border-radius: 20px; font-size: 12px; font-weight: 600;
+}
+.bmi-tag.normal { background: var(--green-light); color: var(--green); }
+.bmi-tag.overweight { background: var(--orange-light); color: var(--orange); }
+.bmi-tag.obese { background: var(--red-light); color: var(--red); }
+.bmi-tag.underweight { background: var(--yellow-light); color: #D97706; }
+
+.weight-chart-wrap {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.weight-chart-wrap h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.weight-chart-wrap canvas { width: 100%; height: 180px; }
+
+.weight-form {
+  display: flex; gap: 8px; margin-bottom: 14px; align-items: flex-end;
+}
+.weight-form .form-group { flex: 1; }
+.weight-form label {
+  display: block; font-size: 11px; color: var(--text-muted);
+  margin-bottom: 4px; font-weight: 600;
+}
+.weight-form input {
+  width: 100%; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: var(--radius-xs);
+  font-size: 14px; font-family: inherit;
+  background: var(--bg-card); color: var(--text-primary);
+  transition: var(--transition);
+}
+.weight-form input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-bg); }
+.btn-add {
+  padding: 10px 18px; background: var(--green); color: #fff;
+  border: none; border-radius: var(--radius-xs);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: var(--transition); white-space: nowrap;
+}
+.btn-add:hover { background: #059669; }
+
+.weight-list { max-height: 240px; overflow-y: auto; }
+.weight-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xs); margin-bottom: 6px;
+  transition: var(--transition);
+}
+.weight-item:hover { border-color: var(--border-strong); }
+.weight-item .wi-left { display: flex; align-items: baseline; gap: 8px; }
+.weight-item .wi-val { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.weight-item .wi-unit { font-size: 12px; color: var(--text-muted); }
+.weight-item .wi-date { font-size: 12px; color: var(--text-muted); }
+.weight-item .wi-del {
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  font-size: 16px; padding: 4px; border-radius: 4px; transition: var(--transition);
+}
+.weight-item .wi-del:hover { color: var(--red); background: var(--red-bg); }
+
+/* ===== Body Assessment (Diet Plan Tab) ===== */
+.body-form-card {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(16,185,129,0.06));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 12px;
+}
+.body-form-card h3 { margin-bottom: 16px; }
+.body-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.body-form-group { display: flex; flex-direction: column; gap: 4px; }
+.body-form-group.full { grid-column: 1 / -1; }
+.body-form-group label {
+  font-size: 12px; font-weight: 600; color: var(--text-secondary);
+}
+.body-form-group input,
+.body-form-group select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  transition: var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+.body-form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A0AEC0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.body-form-group input:focus,
+.body-form-group select:focus {
+  outline: none; border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-bg);
+}
+
+.gender-btn-group {
+  display: flex; gap: 8px;
+}
+.gender-btn {
+  flex: 1; padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  background: var(--bg-card);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  color: var(--text-muted);
+  font-family: inherit;
+}
+.gender-btn:hover { border-color: var(--green); color: var(--text-secondary); }
+.gender-btn.active {
+  background: var(--green-bg);
+  border-color: rgba(16,185,129,0.3);
+  color: var(--green);
+  box-shadow: var(--shadow-green);
+}
+
+.body-save-btn {
+  width: 100%; padding: 12px;
+  background: linear-gradient(135deg, var(--green), #059669);
+  border: none; border-radius: var(--radius-xs);
+  color: #fff; font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: var(--transition);
+  margin-top: 12px; font-family: inherit;
+}
+.body-save-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(16,185,129,0.3); }
+
+/* TDEE & Nutrition Overview */
+.tdee-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px;
+}
+.tdee-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 14px; text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.tdee-card .tdee-val { font-size: 22px; font-weight: 900; line-height: 1; }
+.tdee-card .tdee-lbl { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+.nutrient-bar-wrap { margin: 12px 0; }
+.nutrient-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+.nutrient-label { font-size: 12px; font-weight: 600; color: var(--text-secondary); width: 36px; flex-shrink: 0; }
+.nutrient-track {
+  flex: 1; height: 20px; background: var(--bg-secondary);
+  border-radius: 10px; overflow: hidden; position: relative;
+}
+.nutrient-fill {
+  height: 100%; border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; align-items: center; justify-content: flex-end;
+  padding-right: 8px;
+  font-size: 10px; font-weight: 700; color: #fff;
+  min-width: 40px;
+}
+.nutrient-fill.protein { background: linear-gradient(90deg, #10B981, #059669); }
+.nutrient-fill.carbs { background: linear-gradient(90deg, #3B82F6, #2563EB); }
+.nutrient-fill.fat { background: linear-gradient(90deg, #F59E0B, #D97706); }
+.nutrient-grams { font-size: 11px; color: var(--text-muted); width: 60px; text-align: right; flex-shrink: 0; }
+
+/* Meal Recipe Cards */
+.recipe-section { margin-bottom: 14px; }
+.recipe-section-header {
+  font-size: 15px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+.recipe-section-header .rs-icon { font-size: 20px; }
+.recipe-meal {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 8px;
+  overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.recipe-meal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+}
+.recipe-meal-header .rm-name {
+  font-size: 13px; font-weight: 700; color: var(--text-primary);
+  display: flex; align-items: center; gap: 6px;
+}
+.recipe-meal-header .rm-cal {
+  font-size: 12px; font-weight: 600; color: var(--green);
+  background: var(--green-bg); padding: 3px 10px; border-radius: 12px;
+}
+.recipe-meal-body { padding: 10px 16px 14px; }
+.recipe-option {
+  font-size: 13px; color: var(--text-secondary); padding: 4px 0;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.recipe-option .ro-label {
+  display: flex; align-items: center; gap: 6px;
+}
+.recipe-option .ro-tag {
+  font-size: 10px; font-weight: 600; padding: 2px 8px;
+  border-radius: 10px; background: var(--blue-bg); color: var(--blue);
+}
+.recipe-option .ro-tag.b { background: var(--orange-bg); color: var(--orange); }
+.recipe-option .ro-cal { font-size: 11px; color: var(--text-muted); }
+
+.body-type-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+  margin-top: 10px;
+}
+.body-type-badge.obese { background: var(--red-light); color: var(--red); }
+.body-type-badge.overweight { background: var(--orange-light); color: var(--orange); }
+.body-type-badge.normal { background: var(--green-light); color: var(--green); }
+.body-type-badge.underweight { background: var(--yellow-light); color: #D97706; }
+
+.diet-guide-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.diet-guide-card h4 {
+  font-size: 14px; font-weight: 700; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ===== Dashboard Tab ===== */
+.dash-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;
+}
+.dash-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px; text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.dash-card .dc-value { font-size: 28px; font-weight: 900; line-height: 1; }
+.dash-card .dc-label { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+
+.ring-progress {
+  width: 100px; height: 100px; margin: 0 auto 8px; position: relative;
+}
+.ring-progress svg { transform: rotate(-90deg); }
+.ring-progress .ring-bg { fill: none; stroke: var(--bg-secondary); stroke-width: 8; }
+.ring-progress .ring-fill { fill: none; stroke: var(--green); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.8s ease; }
+.ring-progress .ring-text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-size: 20px; font-weight: 900; color: var(--green);
+}
+
+.dash-chart {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.dash-chart h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.dash-chart canvas { width: 100%; height: 160px; }
+
+/* ===== Achievements Tab ===== */
+.ach-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-bottom: 16px;
+}
+.ach-stats .ach-count { font-size: 36px; font-weight: 900; color: var(--green); }
+.ach-stats .ach-total { font-size: 14px; color: var(--text-muted); }
+
+.ach-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.ach-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  transition: var(--transition); box-shadow: var(--shadow-sm);
+  position: relative; overflow: hidden;
+}
+.ach-card.unlocked {
+  border-color: rgba(16,185,129,0.2);
+}
+.ach-card.unlocked::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+}
+.ach-card.locked { opacity: 0.5; }
+.ach-icon { font-size: 28px; margin-bottom: 8px; }
+.ach-card .ach-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.ach-card .ach-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+.ach-card .ach-date { font-size: 11px; color: var(--green); margin-top: 6px; font-weight: 500; }
+
+/* ===== Data Management Tab ===== */
+.dm-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px;
+}
+.dm-stat {
+  background: var(--bg-secondary); border-radius: var(--radius-xs);
+  padding: 14px; text-align: center;
+}
+.dm-stat .dm-val { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.dm-stat .dm-lbl { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.dm-actions { display: flex; flex-direction: column; gap: 10px; }
+.dm-btn {
+  width: 100%; padding: 14px; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: var(--transition); text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: inherit;
+}
+.dm-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.dm-btn.export { background: var(--green-bg); color: var(--green); border-color: rgba(16,185,129,0.2); }
+.dm-btn.import { background: var(--blue-bg); color: var(--blue); border-color: rgba(59,130,246,0.2); }
+.dm-btn.clear { background: var(--red-bg); color: var(--red); border-color: rgba(239,68,68,0.2); }
+
+/* Confirm Modal */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+  z-index: 200; display: none; align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-box {
+  background: var(--bg-card); border-radius: var(--radius);
+  padding: 28px; max-width: 340px; width: 90%; text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.modal-box .modal-icon { font-size: 40px; margin-bottom: 12px; }
+.modal-box .modal-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.modal-box .modal-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+.modal-box .modal-actions { display: flex; gap: 10px; }
+.modal-box .modal-actions button {
+  flex: 1; padding: 12px; border-radius: var(--radius-xs);
+  font-size: 14px; font-weight: 600; cursor: pointer; border: none;
+  font-family: inherit; transition: var(--transition);
+}
+.modal-box .btn-cancel { background: var(--bg-secondary); color: var(--text-secondary); }
+.modal-box .btn-confirm { background: var(--red); color: #fff; }
+.modal-box .btn-cancel:hover { background: var(--border); }
+.modal-box .btn-confirm:hover { background: #DC2626; }
+
+/* Hidden file input */
+.hidden-input { display: none; }
+
+/* ===== Section Title ===== */
+.section-title {
+  font-size: 16px; font-weight: 700; margin: 20px 0 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 380px) {
+  .header h1 { font-size: 26px; }
+  .day-title { font-size: 9px; }
+  .stat-value { font-size: 20px; }
+  .stats-row { gap: 6px; }
+  .stat-card { padding: 10px 6px; }
+  .dash-grid { grid-template-columns: 1fr; }
+  .tdee-grid { grid-template-columns: 1fr; }
+  .body-form-grid { grid-template-columns: 1fr; }
+  .guide-profile-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.4s ease forwards; }
+.phase-card:nth-child(1) { animation-delay: 0.05s; }
+.phase-card:nth-child(2) { animation-delay: 0.1s; }
+.phase-card:nth-child(3) { animation-delay: 0.15s; }
+.phase-card:nth-child(4) { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-badge">8-Week Program</div>
+    <h1>武道燃脂</h1>
+    <p>散打拳击 × 燃脂体能 · 8周蜕变计划</p>
+  </header>
+
+  <!-- Stats Row -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value green" id="statDays">0</div>
+      <div class="stat-label">已完成训练</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value blue" id="statStreak">0</div>
+      <div class="stat-label">连续打卡</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value orange" id="statCalories">0</div>
+      <div class="stat-label">消耗千卡(估)</div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-section">
+    <div class="progress-label">
+      <span>整体进度</span>
+      <span id="progressText">0%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- Tab Navigation -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="training">训练计划</button>
+    <button class="tab-btn" data-tab="calendar">打卡日历</button>
+    <button class="tab-btn" data-tab="weight">体重追踪</button>
+    <button class="tab-btn" data-tab="dashboard">仪表盘</button>
+    <button class="tab-btn" data-tab="achievements">成就</button>
+    <button class="tab-btn" data-tab="diet">饮食方案</button>
+    <button class="tab-btn" data-tab="tips">运动指导</button>
+    <button class="tab-btn" data-tab="settings">数据管理</button>
+  </nav>
+
+  <!-- ===== Training Tab ===== -->
+  <div class="tab-content active" id="tab-training">
+    <div id="trainingAdaptBadge"></div>
+    <div class="week-selector" id="weekSelector"></div>
+    <div class="day-grid" id="dayGrid"></div>
+    <div class="weekly-chart" id="weeklyChart"></div>
+    <div class="training-detail" id="trainingDetail">
+      <div class="empty-state">
+        <div class="icon">👊</div>
+        <p>选择一个训练日查看详情</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Calendar Tab ===== -->
+  <div class="tab-content" id="tab-calendar">
+    <div class="cal-nav">
+      <button id="calPrev">‹</button>
+      <span class="cal-title" id="calTitle"></span>
+      <button id="calNext">›</button>
+    </div>
+    <div class="cal-weekdays">
+      <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend">
+      <span><span class="dot" style="background:var(--green)"></span>已打卡</span>
+      <span><span class="dot" style="background:var(--red)"></span>缺勤</span>
+      <span><span class="dot" style="background:var(--blue)"></span>今天</span>
+      <span><span class="dot" style="background:var(--text-muted)"></span>休息/未来</span>
+    </div>
+    <div class="cal-stats" id="calStats"></div>
+  </div>
+
+  <!-- ===== Weight Tracker Tab ===== -->
+  <div class="tab-content" id="tab-weight">
+    <div class="bmi-card" id="bmiCard">
+      <div class="bmi-value" id="bmiValue">--</div>
+      <div class="bmi-label">BMI 指数</div>
+      <div class="bmi-tag" id="bmiTag" style="display:none"></div>
+    </div>
+    <div class="weight-chart-wrap">
+      <h3>📈 体重趋势</h3>
+      <canvas id="weightChart"></canvas>
+    </div>
+    <div class="weight-form" id="weightForm">
+      <div class="form-group">
+        <label>体重 (kg)</label>
+        <input type="number" id="wInput" step="0.1" min="20" max="300" placeholder="70.0">
+      </div>
+      <div class="form-group">
+        <label>身高 (cm)</label>
+        <input type="number" id="hInput" step="1" min="100" max="250" placeholder="170">
+      </div>
+      <button class="btn-add" id="addWeight">添加</button>
+    </div>
+    <div class="weight-list" id="weightList"></div>
+  </div>
+
+  <!-- ===== Dashboard Tab ===== -->
+  <div class="tab-content" id="tab-dashboard">
+    <div class="dash-grid">
+      <div class="dash-card">
+        <div class="ring-progress" id="ringProgress">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="40"/>
+            <circle class="ring-fill" id="ringFill" cx="50" cy="50" r="40"
+                    stroke-dasharray="251.3" stroke-dashoffset="251.3"/>
+          </svg>
+          <div class="ring-text" id="ringText">0%</div>
+        </div>
+        <div class="dc-label">本周完成率</div>
+      </div>
+      <div class="dash-card">
+        <div class="dc-value" style="color:var(--blue)" id="dashMonthDays">0</div>
+        <div class="dc-label">本月训练天数</div>
+      </div>
+      <div class="dash-card">
+        <div class="dc-value" style="color:var(--orange)" id="dashTotalCal">0</div>
+        <div class="dc-label">累计消耗(千卡)</div>
+      </div>
+      <div class="dash-card">
+        <div class="dc-value" style="color:var(--green)" id="dashFatLoss">0</div>
+        <div class="dc-label">预估减脂(kg)</div>
+      </div>
+    </div>
+    <div class="dash-chart" id="dashWeightChartWrap">
+      <h3>⚖ 体重趋势</h3>
+      <canvas id="dashWeightChart"></canvas>
+    </div>
+    <div class="card">
+      <h3>📈 预期效果（8周后）</h3>
+      <ul class="diet-list">
+        <li>体脂率下降 3-6%</li>
+        <li>体重减少 4-8kg（纯脂肪，肌肉基本不流失）</li>
+        <li>掌握拳击基本拳法组合（直拳、勾拳、摆拳）</li>
+        <li>掌握散打基本腿法（正蹬、侧踹、鞭腿）</li>
+        <li>心肺功能显著提升，体能明显增强</li>
+        <li>核心力量和身体协调性大幅改善</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== Achievements Tab ===== -->
+  <div class="tab-content" id="tab-achievements">
+    <div class="ach-stats">
+      <div class="ach-count" id="achUnlocked">0</div>
+      <div class="ach-total">/ <span id="achTotal">0</span> 已解锁</div>
+    </div>
+    <div class="ach-grid" id="achGrid"></div>
+  </div>
+
+  <!-- ===== Diet Plan Tab (Body Assessment + Smart Recommendation) ===== -->
+  <div class="tab-content" id="tab-diet">
+    <div id="dietPlanContent"></div>
+  </div>
+
+  <!-- ===== Tips Tab (now dynamic: personalized training guide) ===== -->
+  <div class="tab-content" id="tab-tips">
+    <div id="tipsContent"></div>
+  </div>
+
+  <!-- ===== Data Management Tab ===== -->
+  <div class="tab-content" id="tab-settings">
+    <div class="dm-stats" id="dmStats"></div>
+    <div class="dm-actions">
+      <button class="dm-btn export" id="dmExport">📤 导出备份数据</button>
+      <button class="dm-btn import" id="dmImport">📥 导入备份数据</button>
+      <button class="dm-btn clear" id="dmClear">🗑 清空所有数据</button>
+    </div>
+    <input type="file" accept=".json" id="importFile" class="hidden-input">
+  </div>
+</div>
+
+<!-- Success Overlay -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-content">
+    <div class="success-check">✓</div>
+    <div class="success-text">训练完成！</div>
+    <div class="success-sub">今日燃脂约 600-800 千卡 🔥</div>
+  </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal-box">
+    <div class="modal-icon">⚠️</div>
+    <div class="modal-title" id="modalTitle">确认操作</div>
+    <div class="modal-desc" id="modalDesc">此操作不可撤销</div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="modalCancel">取消</button>
+      <button class="btn-confirm" id="modalConfirm">确认</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== Training Plan Base Data (Templates) =====
+const WEEKS_TEMPLATE = [
+  { name:'适应期', focus:'基础动作·低强度', days:[
+    { name:'周一',type:'punch',title:'拳击基础',duration:60,calories:450,phases:[
+      { name:'热身',time:'10min',dot:'warmup',exercises:[
+        {name:'关节环绕活动',detail:'肩/髋/膝/踝 <em>各15次</em>',alt:null},{name:'开合跳',detail:'<em>3组</em> × 20次',alt:null},{name:'原地高抬腿',detail:'<em>3组</em> × 15秒',alt:'可改为原地踏步'},
+      ]},
+      { name:'技术训练',time:'25min',dot:'tech',exercises:[
+        {name:'拳击基本站姿',detail:'<em>10min</em> 反复练习'},{name:'后手直拳',detail:'<em>5组</em> × 20次/侧'},{name:'前手直拳',detail:'<em>5组</em> × 20次/侧'},{name:'前后直拳组合',detail:'<em>3组</em> × 30秒'},
+      ]},
+      { name:'体能强化',time:'15min',dot:'fitness',exercises:[
+        {name:'俯卧撑',detail:'<em>3组</em> × 12次',alt:'可改为跪姿俯卧撑'},{name:'深蹲',detail:'<em>3组</em> × 15次'},{name:'平板支撑',detail:'<em>3组</em> × 30秒'},
+      ]},
+      { name:'拉伸放松',time:'10min',dot:'stretch',exercises:[
+        {name:'肩部拉伸',detail:'<em>每侧30秒</em>'},{name:'大腿前后侧拉伸',detail:'<em>每侧30秒</em>'},{name:'全身放松呼吸',detail:'<em>3min</em> 深呼吸'},
+      ]},
+    ]},
+    { name:'周二',type:'kick',title:'散打腿法',duration:60,calories:480,phases:[
+      { name:'热身',time:'10min',dot:'warmup',exercises:[
+        {name:'慢跑热身',detail:'<em>5min</em> 低速'},{name:'髋关节灵活性',detail:'<em>每侧10次</em> 前后/左右/环绕'},{name:'弓步转体',detail:'<em>3组</em> × 10次/侧'},
+      ]},
+      { name:'技术训练',time:'25min',dot:'tech',exercises:[
+        {name:'正蹬腿基础',detail:'<em>5组</em> × 10次/侧'},{name:'侧踹腿基础',detail:'<em>5组</em> × 8次/侧'},{name:'踢靶练习',detail:'<em>10min</em> 结合直拳'},
+      ]},
+      { name:'体能强化',time:'15min',dot:'fitness',exercises:[
+        {name:'弓步蹲',detail:'<em>3组</em> × 12次/侧'},{name:'仰卧举腿',detail:'<em>3组</em> × 12次'},{name:'臀桥',detail:'<em>3组</em> × 15次'},
+      ]},
+      { name:'拉伸放松',time:'10min',dot:'stretch',exercises:[
+        {name:'髋屈肌拉伸',detail:'<em>每侧30秒</em>'},{name:'大腿后侧拉伸',detail:'<em>每侧30秒</em>'},{name:'泡沫轴放松',detail:'<em>5min</em> 大腿/臀部'},
+      ]},
+    ]},
+    { name:'周三',type:'rest',title:'恢复日',duration:0,calories:0,phases:[] },
+    { name:'周四',type:'punch',title:'组合拳法',duration:65,calories:500,phases:[
+      { name:'热身',time:'10min',dot:'warmup',exercises:[
+        {name:'跳绳',detail:'<em>3组</em> × 1分钟',alt:'可改为原地踏步'},{name:'肩部环绕',detail:'<em>前/后各15次</em>'},{name:'空击热身',detail:'<em>2min</em> 轻松节奏'},
+      ]},
+      { name:'技术训练',time:'30min',dot:'tech',exercises:[
+        {name:'1-2组合拳（前后直拳）',detail:'<em>5组</em> × 20次'},{name:'摆拳基础',detail:'<em>5组</em> × 15次/侧'},{name:'勾拳基础',detail:'<em>5组</em> × 12次/侧'},{name:'连续空击',detail:'<em>3组</em> × 2分钟'},
+      ]},
+      { name:'体能强化',time:'15min',dot:'fitness',exercises:[
+        {name:'波比跳',detail:'<em>3组</em> × 8次',alt:'可改为半波比跳(降膝盖)'},{name:'登山者',detail:'<em>3组</em> × 15次/侧'},{name:'卷腹',detail:'<em>3组</em> × 15次'},
+      ]},
+      { name:'拉伸放松',time:'10min',dot:'stretch',exercises:[
+        {name:'胸部拉伸',detail:'<em>每侧30秒</em>'},{name:'背部拉伸',detail:'<em>30秒</em>'},{name:'手臂拉伸',detail:'<em>每侧20秒</em>'},
+      ]},
+    ]},
+    { name:'周五',type:'hiit',title:'搏击体能',duration:60,calories:550,phases:[
+      { name:'热身',time:'10min',dot:'warmup',exercises:[
+        {name:'跳绳',detail:'<em>3min</em>',alt:'可改为原地踏步'},{name:'动态拉伸',detail:'<em>全身各关节</em> 7min'},
+      ]},
+      { name:'HIIT 搏击',time:'25min',dot:'fitness',exercises:[
+        {name:'30秒全力出拳 + 30秒休息',detail:'<em>4轮</em>'},{name:'30秒高抬腿 + 30秒休息',detail:'<em>4轮</em>',alt:'高抬腿可改为原地点地'},{name:'30秒出拳+踢腿组合 + 30秒休息',detail:'<em>4轮</em>'},{name:'30秒波比跳 + 30秒休息',detail:'<em>4轮</em>',alt:'可改为半波比跳(降膝盖)'},
+      ]},
+      { name:'核心训练',time:'15min',dot:'fitness',exercises:[
+        {name:'俄罗斯转体',detail:'<em>3组</em> × 20次'},{name:'侧平板支撑',detail:'<em>3组</em> × 20秒/侧'},{name:'仰卧自行车',detail:'<em>3组</em> × 20次'},
+      ]},
+      { name:'拉伸放松',time:'10min',dot:'stretch',exercises:[
+        {name:'全身静态拉伸',detail:'<em>每个部位30秒</em>'},{name:'冥想放松',detail:'<em>3min</em>'},
+      ]},
+    ]},
+    { name:'周六',type:'rest',title:'休息',duration:0,calories:0,phases:[] },
+    { name:'周日',type:'rest',title:'休息',duration:0,calories:0,phases:[] },
+  ]},
+  { name:'基础巩固',focus:'强化基础·提升体能', days:[
+    { name:'周一',type:'punch',title:'拳击进阶',duration:65,calories:500,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'跳绳',detail:'<em>3组</em> × 1.5分钟',alt:'可改为原地踏步'},{name:'空击热身',detail:'<em>2组</em> × 2分钟'}]},{name:'技术训练',time:'30min',dot:'tech',exercises:[{name:'直拳-摆拳组合(1-2-3)',detail:'<em>5组</em> × 20次'},{name:'前手刺拳连续输出',detail:'<em>3组</em> × 30秒'},{name:'后手重击+前手连击',detail:'<em>5组</em> × 15次'},{name:'对镜空击',detail:'<em>3组</em> × 3分钟'}]},{name:'体能强化',time:'15min',dot:'fitness',exercises:[{name:'钻石俯卧撑',detail:'<em>3组</em> × 10次',alt:'可改为跪姿俯卧撑'},{name:'保加利亚分腿蹲',detail:'<em>3组</em> × 10次/侧'},{name:'平板支撑转体',detail:'<em>3组</em> × 10次/侧'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'上肢拉伸',detail:'<em>每部位30秒</em>'},{name:'胸背拉伸',detail:'<em>每侧30秒</em>'}]}]},
+    { name:'周二',type:'kick',title:'腿法强化',duration:65,calories:520,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'慢跑热身',detail:'<em>5min</em>'},{name:'动态拉伸',detail:'<em>5min</em> 下肢重点'}]},{name:'技术训练',time:'30min',dot:'tech',exercises:[{name:'鞭腿（低扫）',detail:'<em>5组</em> × 10次/侧'},{name:'正蹬+侧踹组合',detail:'<em>5组</em> × 8次/侧'},{name:'拳腿组合（直拳+鞭腿）',detail:'<em>5组</em> × 10次/侧'},{name:'踢靶自由组合',detail:'<em>10min</em>'}]},{name:'体能强化',time:'15min',dot:'fitness',exercises:[{name:'深蹲跳',detail:'<em>3组</em> × 10次',alt:'可改为普通深蹲(不跳)'},{name:'单腿硬拉',detail:'<em>3组</em> × 10次/侧'},{name:'臀桥行进',detail:'<em>3组</em> × 12次'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'下肢全面拉伸',detail:'<em>每部位30秒</em>'},{name:'泡沫轴放松',detail:'<em>5min</em>'}]}]},
+    { name:'周三',type:'cardio',title:'有氧恢复',duration:40,calories:350,phases:[{name:'热身',time:'5min',dot:'warmup',exercises:[{name:'快走',detail:'<em>5min</em>'}]},{name:'有氧运动',time:'25min',dot:'fitness',exercises:[{name:'慢跑/快走交替',detail:'<em>25min</em> 跑2分走1分'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'全身拉伸',detail:'<em>10min</em> 重点下肢'}]}]},
+    { name:'周四',type:'punch',title:'组合进阶',duration:70,calories:550,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'跳绳',detail:'<em>3组</em> × 2分钟',alt:'可改为原地踏步'},{name:'空击',detail:'<em>2min</em>'}]},{name:'技术训练',time:'35min',dot:'tech',exercises:[{name:'三拳组合(刺-直-摆)',detail:'<em>5组</em> × 20次'},{name:'四拳组合(刺-直-摆-勾)',detail:'<em>5组</em> × 15次'},{name:'闪避+反击',detail:'<em>5组</em> × 1分钟'},{name:'打靶组合练习',detail:'<em>3组</em> × 3分钟'}]},{name:'体能强化',time:'15min',dot:'fitness',exercises:[{name:'引体向上(或弹力带辅助)',detail:'<em>3组</em> × 6-8次'},{name:'倒V字支撑',detail:'<em>3组</em> × 15次'},{name:'侧卧抬腿',detail:'<em>3组</em> × 15次/侧'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'全身拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周五',type:'hiit',title:'高燃搏击',duration:70,calories:650,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'跳绳',detail:'<em>3min</em>',alt:'可改为原地踏步'},{name:'动态拉伸',detail:'<em>7min</em>'}]},{name:'HIIT 搏击',time:'30min',dot:'fitness',exercises:[{name:'40秒全力组合拳 + 20秒休息',detail:'<em>5轮</em>'},{name:'40秒拳腿组合 + 20秒休息',detail:'<em>5轮</em>'},{name:'40秒跳跃式击打 + 20秒休息',detail:'<em>5轮</em>',alt:'可改为站姿出拳(不跳)'},{name:'40秒冲刺出拳 + 20秒休息',detail:'<em>5轮</em>'}]},{name:'核心暴击',time:'15min',dot:'fitness',exercises:[{name:'悬垂举腿(或仰卧)',detail:'<em>3组</em> × 12次'},{name:'死虫式',detail:'<em>3组</em> × 10次/侧'},{name:'超人式',detail:'<em>3组</em> × 15次'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'深度拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周六',type:'rest',title:'休息',duration:0,calories:0,phases:[] },
+    { name:'周日',type:'rest',title:'休息',duration:0,calories:0,phases:[] },
+  ]},
+  { name:'强度提升',focus:'增加训练量·引入间歇', days:[
+    { name:'周一',type:'punch',title:'重拳强化',duration:70,calories:580,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'跳绳双摇尝试',detail:'<em>3组</em> × 30秒',alt:'可改为单摇跳绳或踏步'},{name:'空击热身',detail:'<em>3min</em>'}]},{name:'技术训练',time:'30min',dot:'tech',exercises:[{name:'重直拳打靶',detail:'<em>5组</em> × 15次/侧 (全力)'},{name:'摆拳-勾拳连击',detail:'<em>5组</em> × 20次'},{name:'防守反击组合',detail:'<em>5组</em> × 2分钟'},{name:'自由空击',detail:'<em>3组</em> × 3分钟'}]},{name:'体能强化',time:'20min',dot:'fitness',exercises:[{name:'宽距俯卧撑',detail:'<em>4组</em> × 12次',alt:'可改为跪姿俯卧撑'},{name:'深蹲',detail:'<em>4组</em> × 20次'},{name:'药球砸地(或深蹲跳)',detail:'<em>3组</em> × 10次',alt:'深蹲跳可改为普通深蹲'},{name:'平板支撑',detail:'<em>3组</em> × 45秒'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'全身拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周二',type:'kick',title:'腿法精进',duration:70,calories:560,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'慢跑',detail:'<em>5min</em>'},{name:'动态拉伸',detail:'<em>5min</em>'}]},{name:'技术训练',time:'30min',dot:'tech',exercises:[{name:'高鞭腿练习',detail:'<em>5组</em> × 8次/侧'},{name:'组合踢法(蹬+踹+鞭)',detail:'<em>5组</em> × 6次/侧'},{name:'拳踢一体化组合',detail:'<em>5组</em> × 2分钟'},{name:'踢靶自由组合',detail:'<em>10min</em>'}]},{name:'体能强化',time:'20min',dot:'fitness',exercises:[{name:'跳箱/台阶跳',detail:'<em>4组</em> × 10次',alt:'可改为原地台阶上下(低矮台阶)'},{name:'单腿蹲',detail:'<em>3组</em> × 8次/侧'},{name:'壶铃摇摆(或硬拉)',detail:'<em>4组</em> × 15次'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'下肢深度拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周三',type:'cardio',title:'有氧恢复',duration:45,calories:380,phases:[{name:'热身',time:'5min',dot:'warmup',exercises:[{name:'快走',detail:'<em>5min</em>'}]},{name:'有氧运动',time:'30min',dot:'fitness',exercises:[{name:'中速慢跑',detail:'<em>30min</em> 心率140-150'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'全身拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周四',type:'punch',title:'实战模拟',duration:75,calories:600,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'跳绳',detail:'<em>3组</em> × 2分钟',alt:'可改为原地踏步'},{name:'空击',detail:'<em>3min</em>'}]},{name:'技术训练',time:'35min',dot:'tech',exercises:[{name:'进攻组合(四拳+踢)',detail:'<em>5组</em> × 3分钟'},{name:'反击训练(挡-闪-反击)',detail:'<em>5组</em> × 2分钟'},{name:'连续打靶',detail:'<em>3组</em> × 3分钟'}]},{name:'体能强化',time:'20min',dot:'fitness',exercises:[{name:'俯卧撑变式',detail:'<em>4组</em> × 12次',alt:'可改为跪姿俯卧撑'},{name:'TRX划船(或弹力带)',detail:'<em>4组</em> × 10次'},{name:'核心复合训练',detail:'<em>3组</em> × 2分钟循环'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'全身拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周五',type:'hiit',title:'极限燃脂',duration:75,calories:700,phases:[{name:'热身',time:'10min',dot:'warmup',exercises:[{name:'跳绳',detail:'<em>3min</em>',alt:'可改为原地踏步'},{name:'动态热身',detail:'<em>7min</em>'}]},{name:'HIIT 搏击',time:'35min',dot:'fitness',exercises:[{name:'50秒全力出拳+踢 + 10秒休息',detail:'<em>6轮</em>'},{name:'50秒跳跃击打 + 10秒休息',detail:'<em>6轮</em>',alt:'可改为站姿出拳(不跳)'},{name:'50秒地面爆发 + 10秒休息',detail:'<em>6轮</em>',alt:'可改为站立版(扶椅)'},{name:'50秒综合组合 + 10秒休息',detail:'<em>6轮</em>'}]},{name:'核心终结',time:'20min',dot:'fitness',exercises:[{name:'龙旗(或仰卧举腿)',detail:'<em>3组</em> × 8次'},{name:'平板支撑变式',detail:'<em>3组</em> × 45秒'},{name:'腹肌撕裂组合',detail:'<em>3组</em> × 2分钟'}]},{name:'拉伸放松',time:'10min',dot:'stretch',exercises:[{name:'深度拉伸',detail:'<em>10min</em>'}]}]},
+    { name:'周六',type:'rest',title:'休息',duration:0,calories:0,phases:[] },
+    { name:'周日',type:'rest',title:'休息',duration:0,calories:0,phases:[] },
+  ]},
+];
+
+// ===== Training Adaptation Engine =====
+function hasProfileData() {
+  return profile.gender && profile.age && profile.height && (weightData.length > 0 || profile.weight);
+}
+
+function getLatestWeight() {
+  return weightData.length > 0 ? weightData[weightData.length - 1].weight : (profile.weight || 0);
+}
+
+function getAdaptParams() {
+  const w = getLatestWeight();
+  const h = profile.height || 170;
+  if (!hasProfileData() || !w || w < 30) return { bodyType: null, baseMult: 1.0, startOffset: 0, showAlts: false, extraRestDay: false };
+
+  const bmi = w / ((h / 100) * (h / 100));
+  const bodyType = getBodyType(bmi);
+  const age = parseInt(profile.age) || 25;
+  const activity = parseInt(profile.activityLevel) || 3;
+  const gender = profile.gender;
+
+  var baseMult = 1.0;
+  var startOffset = 0;
+  var showAlts = false;
+  var extraRestDay = false;
+
+  // BMI adaptation
+  if (bodyType === 'obese') {
+    baseMult = 0.6; showAlts = true; extraRestDay = true; startOffset = 1;
+  } else if (bodyType === 'overweight') {
+    baseMult = 0.75; showAlts = true; startOffset = 0;
+  } else if (bodyType === 'normal') {
+    baseMult = 0.9; showAlts = false;
+  } else {
+    baseMult = 0.8; showAlts = false; // underweight
+  }
+
+  // Activity level adaptation
+  if (activity <= 1) { baseMult *= 0.85; startOffset = 1; }
+  else if (activity >= 5) { baseMult *= 1.1; startOffset = -1; }
+
+  // Age adaptation
+  if (age >= 50) { baseMult *= 0.85; showAlts = true; }
+  else if (age >= 40) { baseMult *= 0.9; showAlts = true; }
+
+  // Gender: slightly reduce upper body for females
+  // (handled in generation, not in mult)
+
+  return { bodyType, baseMult: Math.round(baseMult * 100) / 100, startOffset, showAlts, extraRestDay };
+}
+
+function generatePersonalizedWeeks() {
+  const params = getAdaptParams();
+  const basePlans = WEEKS_TEMPLATE;
+  const allNames = ['适应期','基础巩固','强度提升','突破瓶颈','力量巅峰','综合实战','冲刺减脂','终极考验'];
+  const allFocuses = ['基础动作·低强度','强化基础·提升体能','增加训练量·引入间歇','突破训练瓶颈·强化薄弱项','提升力量输出·增加负重','综合技能·实战模拟','最大化燃脂·高强度间歇','终极测试·全力冲刺'];
+  const mults = [1.0,1.1,1.2,1.25,1.3,1.35,1.4,1.5];
+  const calAdds = [0,50,100,120,150,180,200,250];
+
+  const result = [];
+  for (let w = 0; w < 8; w++) {
+    const srcIdx = Math.max(0, w - params.startOffset);
+    const base = basePlans[srcIdx % basePlans.length];
+    const m = mults[w], ca = calAdds[w];
+    const bm = params.baseMult;
+
+    const days = base.days.map((day, di) => {
+      // Extra rest day for obese: make Wed a rest day if not already
+      if (params.extraRestDay && di === 2 && day.type !== 'rest') {
+        return { name: day.name, type: 'rest', title: '主动恢复', duration: 0, calories: 0, phases: [] };
+      }
+
+      if (day.type === 'rest') return { ...day };
+
+      // Adapt duration and calories
+      const adaptDuration = Math.round(day.duration * Math.min(bm + 0.15, 1.1));
+      const adaptCal = Math.round(day.calories * (bm + 0.2));
+
+      const phases = day.phases.map(phase => ({
+        ...phase,
+        time: phase.dot === 'warmup' ? Math.round(parseInt(phase.time) * Math.max(1.2, 1 + (1 - bm) * 0.5)) + 'min' : phase.time,
+        exercises: phase.exercises.map(ex => {
+          var newDetail = ex.detail;
+          // Adapt sets
+          newDetail = newDetail.replace(/(\d+)组/g, (match, n) => {
+            const v = Math.max(1, Math.round(parseInt(n) * bm));
+            return v + '组';
+          });
+          // Adapt reps
+          newDetail = newDetail.replace(/(\d+)次/g, (match, n) => {
+            const v = Math.max(5, Math.round(parseInt(n) * bm));
+            return v + '次';
+          });
+          // Adapt seconds
+          newDetail = newDetail.replace(/(\d+)秒/g, (match, n) => {
+            const v = Math.max(10, Math.round(parseInt(n) * bm));
+            return v + '秒';
+          });
+          // Adapt minutes in detail text
+          newDetail = newDetail.replace(/(\d+)分钟/g, (match, n) => {
+            const v = Math.max(3, Math.round(parseInt(n) * bm));
+            return v + '分钟';
+          });
+
+          return { name: ex.name, detail: newDetail, alt: (params.showAlts && ex.alt) ? ex.alt : null };
+        })
+      }));
+
+      return { ...day, duration: adaptDuration, calories: adaptCal, phases };
+    });
+
+    result.push({ name: allNames[w], focus: allFocuses[w], days });
+  }
+
+  return result;
+}
+
+// ===== State =====
+var currentWeek = 0;
+var currentDay = null;
+var completed = {};
+var weightData = [];
+var profile = {};
+var achievements = {};
+
+// Safe localStorage
+function loadData(key, def) {
+  try { const v=localStorage.getItem('martial_'+key); return v?JSON.parse(v):def; } catch(e){ return def; }
+}
+function saveData(key, val) {
+  try { localStorage.setItem('martial_'+key, JSON.stringify(val)); } catch(e){}
+}
+
+completed = loadData('plan_done',{});
+weightData = loadData('weight',[]);
+profile = loadData('profile',{});
+achievements = loadData('achievements',{});
+
+// ===== Achievement Definitions =====
+const ACHIEVEMENTS = [
+  {id:'first_checkin',icon:'🏅',name:'初次打卡',desc:'完成第一次训练打卡',check:()=>Object.keys(completed).length>=1},
+  {id:'streak_3',icon:'🔥',name:'三连燃',desc:'连续打卡3天',check:()=>calcStreak()>=3},
+  {id:'streak_7',icon:'⚡',name:'周冠王',desc:'连续打卡7天',check:()=>calcStreak()>=7},
+  {id:'streak_14',icon:'🌟',name:'两周勇士',desc:'连续打卡14天',check:()=>calcStreak()>=14},
+  {id:'streak_30',icon:'👑',name:'月度传奇',desc:'连续打卡30天',check:()=>calcStreak()>=30},
+  {id:'total_5',icon:'✊',name:'初露锋芒',desc:'累计完成5次训练',check:()=>Object.keys(completed).length>=5},
+  {id:'total_15',icon:'💪',name:'身经百战',desc:'累计完成15次训练',check:()=>Object.keys(completed).length>=15},
+  {id:'total_30',icon:'🏆',name:'钢铁意志',desc:'累计完成30次训练',check:()=>Object.keys(completed).length>=30},
+  {id:'total_40',icon:'🎯',name:'满勤达成',desc:'完成全部40次训练',check:()=>Object.keys(completed).length>=40},
+  {id:'weight_first',icon:'⚖',name:'开始记录',desc:'记录第一次体重',check:()=>weightData.length>=1},
+  {id:'weight_loss_2',icon:'📉',name:'初见成效',desc:'体重下降2kg',check:()=>{if(weightData.length<2)return false;const sorted=[...weightData].sort((a,b)=>a.date.localeCompare(b.date));return sorted[0].weight-sorted[sorted.length-1].weight>=2;}},
+  {id:'weight_loss_5',icon:'🦋',name:'华丽蜕变',desc:'体重下降5kg',check:()=>{if(weightData.length<2)return false;const sorted=[...weightData].sort((a,b)=>a.date.localeCompare(b.date));return sorted[0].weight-sorted[sorted.length-1].weight>=5;}},
+];
+
+// ===== DOM References =====
+const weekSelector = document.getElementById('weekSelector');
+const dayGrid = document.getElementById('dayGrid');
+const trainingDetail = document.getElementById('trainingDetail');
+
+// Runtime WEEKS array (regenerated when profile changes)
+var WEEKS = generatePersonalizedWeeks();
+
+// ===== Utility =====
+function todayStr() { return new Date().toISOString().split('T')[0]; }
+function dateStr(d) { return d.toISOString().split('T')[0]; }
+function shortDate(s) { const d=new Date(s); return (d.getMonth()+1)+'/'+d.getDate(); }
+
+function calcStreak() {
+  var streak=0;
+  const dates=Object.values(completed).map(v=>v.date).sort().reverse();
+  const check=d=>{ const dt=new Date(d); dt.setHours(0,0,0,0); return dt; };
+  const today=check(new Date());
+  var expected=today;
+  for(const d of dates) {
+    const dd=check(d);
+    const diff=Math.round((expected-dd)/(1000*60*60*24));
+    if(diff===0||diff===1) { streak++; expected=dd; }
+    else break;
+  }
+  return streak;
+}
+
+// ===== Body Assessment Helpers =====
+function calcBMR(gender, weight, height, age) {
+  if (gender === 'male') return 10 * weight + 6.25 * height - 5 * age + 5;
+  return 10 * weight + 6.25 * height - 5 * age - 161;
+}
+
+function getActivityMult(level) {
+  const m = { 1: 1.2, 2: 1.375, 3: 1.55, 4: 1.725, 5: 1.9 };
+  return m[level] || 1.55;
+}
+
+function getBodyType(bmi) {
+  if (bmi < 18.5) return 'underweight';
+  if (bmi < 24) return 'normal';
+  if (bmi < 28) return 'overweight';
+  return 'obese';
+}
+
+function getBodyTypeName(type) {
+  return { underweight: '偏瘦', normal: '正常', overweight: '偏重', obese: '肥胖' }[type] || '未知';
+}
+
+function getBodyTypeEmoji(type) {
+  return { underweight: '📏', normal: '💪', overweight: '🔥', obese: '🔥' }[type] || '❓';
+}
+
+function getNutrientRatios(type) {
+  if (type === 'obese' || type === 'overweight') return { protein: 35, carbs: 35, fat: 30 };
+  if (type === 'underweight') return { protein: 25, carbs: 45, fat: 30 };
+  return { protein: 30, carbs: 40, fat: 30 };
+}
+
+function getActivityName(level) {
+  return { 1:'久坐不动',2:'轻度活动',3:'中度活动',4:'高度活动',5:'极高活动' }[level]||'未知';
+}
+
+// ===== Refresh Training Plan (call after profile/weight changes) =====
+function refreshTrainingPlan() {
+  WEEKS = generatePersonalizedWeeks();
+  renderWeeks(); renderDays(); renderTrainingDetail(); renderWeeklyChart();
+  renderAdaptBadge();
+}
+
+// ===== Render: Adaptation Badge =====
+function renderAdaptBadge() {
+  const el = document.getElementById('trainingAdaptBadge');
+  const params = getAdaptParams();
+  if (!params.bodyType) {
+    el.innerHTML = `<div class="adapt-info-card">
+      <strong>🔬 训练尚未根据体质适配</strong><br>
+      请先在「<span class="go-diet-link" onclick="document.querySelector('[data-tab=diet]').click()">饮食方案</span>」Tab中填写体质数据，训练计划将根据你的BMI、年龄、活动水平自动调整强度。
+    </div>`;
+    return;
+  }
+  const intensityLabel = params.baseMult < 0.7 ? '降强度' + Math.round((1-params.baseMult)*100) + '%' :
+    params.baseMult < 0.9 ? '微降强度' + Math.round((1-params.baseMult)*100) + '%' :
+    params.baseMult > 1.05 ? '增强强度' + Math.round((params.baseMult-1)*100) + '%' : '标准强度';
+  el.innerHTML = `<div class="adapt-badge ${params.bodyType}">
+    🧬 ${getBodyTypeName(params.bodyType)}体质 · ${intensityLabel} · ${params.showAlts?'含替代动作':'标准动作'}
+  </div>`;
+}
+
+// ===== Render: Training Plan =====
+function renderWeeks() {
+  weekSelector.innerHTML = WEEKS.map((w,i)=>`
+    <button class="week-btn ${i===currentWeek?'active':''}" data-week="${i}">W${i+1} · ${w.name}</button>
+  `).join('');
+}
+
+function renderDays() {
+  const week=WEEKS[currentWeek];
+  const icons={punch:'🥊',kick:'🦵',hiit:'🔥',cardio:'🏃',rest:'😴'};
+  dayGrid.innerHTML = week.days.map((day,i)=>{
+    const key=`${currentWeek}-${i}`;
+    const done=completed[key];
+    const active=currentDay===i;
+    return `<div class="day-card ${day.type==='rest'?'rest':''} ${active?'active':''} ${done?'completed':''}" data-day="${i}">
+      <div class="day-name">${day.name}</div><div class="day-type-icon">${icons[day.type]||'😴'}</div><div class="day-title">${day.title}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderTrainingDetail() {
+  if(currentDay===null||WEEKS[currentWeek].days[currentDay].type==='rest'){
+    const rd=currentDay!==null?WEEKS[currentWeek].days[currentDay]:null;
+    trainingDetail.innerHTML = `<div class="empty-state"><div class="icon">${rd&&rd.type==='rest'?'🧘':'👊'}</div>
+      <p>${rd&&rd.type==='rest'?rd.title+'日<br>好好休息，让身体恢复！':'选择一个训练日查看详情'}</p></div>`;
+    return;
+  }
+  const day=WEEKS[currentWeek].days[currentDay];
+  const key=`${currentWeek}-${currentDay}`;
+  const isDone=completed[key];
+  trainingDetail.innerHTML = `
+    <div class="detail-header"><div class="detail-title">${day.title}</div>
+      <div class="detail-meta"><span class="meta-tag">⏱ ${day.duration}min</span><span class="meta-tag">🔥 ${day.calories}kcal</span></div>
+    </div>
+    ${day.phases.map((p,pi)=>`
+      <div class="phase-card fade-in-up" style="animation-delay:${pi*0.05}s">
+        <div class="phase-header"><div class="phase-dot ${p.dot}"></div><div class="phase-name">${p.name}</div><div class="phase-time">${p.time}</div></div>
+        <div class="exercise-list">${p.exercises.map(ex=>`
+          <div class="exercise-item"><div class="exercise-name">${ex.name}</div><div class="exercise-detail">${ex.detail}</div></div>
+          ${ex.alt ? `<div class="exercise-alt">💡 替代：${ex.alt}</div>` : ''}
+        `).join('')}</div>
+      </div>
+    `).join('')}
+    <button class="checkin-btn ${isDone?'completed':''}" id="checkinBtn">${isDone?'✓ 今日已完成':'💪 完成今日训练'}</button>`;
+  if(!isDone) document.getElementById('checkinBtn').addEventListener('click',handleCheckin);
+}
+
+function handleCheckin() {
+  const key=`${currentWeek}-${currentDay}`;
+  completed[key]={date:new Date().toISOString(),calories:WEEKS[currentWeek].days[currentDay].calories};
+  saveData('plan_done',completed);
+  successOverlay.classList.add('show');
+  setTimeout(()=>successOverlay.classList.remove('show'),1500);
+  updateStats(); renderDays(); renderTrainingDetail(); renderWeeklyChart();
+  checkAchievements();
+}
+
+function updateStats() {
+  const keys=Object.keys(completed);
+  const totalDays=keys.length;
+  const totalCal=keys.reduce((s,k)=>s+(completed[k].calories||0),0);
+  const streak=calcStreak();
+  document.getElementById('statDays').textContent=totalDays;
+  document.getElementById('statStreak').textContent=streak;
+  document.getElementById('statCalories').textContent=totalCal>999?(totalCal/1000).toFixed(1)+'k':totalCal;
+  const totalPossible = WEEKS.reduce((s,w)=>s+w.days.filter(d=>d.type!=='rest').length,0);
+  const pct=Math.round((totalDays/totalPossible)*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressText').textContent=pct+'%';
+  const now=new Date();
+  const monthStart=new Date(now.getFullYear(),now.getMonth(),1);
+  var monthDays=0;
+  keys.forEach(k=>{const d=new Date(completed[k].date);if(d>=monthDays?false:true){if(d>=monthStart)monthDays++;}});
+  document.getElementById('dashMonthDays').textContent=monthDays;
+  document.getElementById('dashTotalCal').textContent=totalCal>999?(totalCal/1000).toFixed(1)+'k':totalCal;
+  document.getElementById('dashFatLoss').textContent=(totalCal/7700).toFixed(1);
+  renderWeekRing();
+}
+
+function renderWeekRing() {
+  const now=new Date();
+  const dayOfWeek=(now.getDay()+6)%7;
+  var weekDone=0,weekTotal=0;
+  const weekStart=new Date(now); weekStart.setDate(now.getDate()-dayOfWeek); weekStart.setHours(0,0,0,0);
+  Object.entries(completed).forEach(([k,v])=>{
+    const d=new Date(v.date);
+    if(d>=weekStart){weekDone++;}
+  });
+  weekTotal=5;
+  const pct=weekTotal>0?Math.min(weekDone/weekTotal,1):0;
+  const circumference=2*Math.PI*40;
+  document.getElementById('ringFill').setAttribute('stroke-dashoffset', circumference*(1-pct));
+  document.getElementById('ringText').textContent=Math.round(pct*100)+'%';
+}
+
+function renderWeeklyChart() {
+  const chart=document.getElementById('weeklyChart');
+  chart.innerHTML=WEEKS.map((w,i)=>{
+    var done=0,possible=0;
+    w.days.forEach((d,di)=>{if(d.type!=='rest'){possible++;if(completed[`${i}-${di}`])done++;}});
+    const h=possible>0?Math.max((done/5)*100,8):8;
+    return `<div class="chart-bar-wrap"><div class="chart-bar ${possible===0?'rest-bar':''}" style="height:${h}%"></div><div class="chart-label">W${i+1}</div></div>`;
+  }).join('');
+}
+
+// ===== Calendar Tab =====
+var calYear, calMonth;
+(function initCal(){ const n=new Date(); calYear=n.getFullYear(); calMonth=n.getMonth(); })();
+
+function renderCalendar() {
+  document.getElementById('calTitle').textContent=`${calYear}年${calMonth+1}月`;
+  const first=new Date(calYear,calMonth,1);
+  const last=new Date(calYear,calMonth+1,0);
+  var startDay=(first.getDay()+6)%7;
+  const daysInMonth=last.getDate();
+  const today=todayStr();
+  var html='';
+  for(let i=0;i<startDay;i++) html+='<div class="cal-day empty"></div>';
+  for(let d=1;d<=daysInMonth;d++){
+    const ds=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday=ds===today;
+    const isFuture=ds>today;
+    var checked=false;
+    Object.values(completed).forEach(v=>{if(v.date&&v.date.startsWith(ds))checked=true;});
+    const dayDate=new Date(ds);
+    const isWeekend=dayDate.getDay()===0||dayDate.getDay()===6;
+    const isRestDay=isWeekend||false;
+    const isPast=!isFuture;
+    const missed=isPast&&!isRestDay&&!checked&&d<new Date(today).getDate();
+    var cls='cal-day';
+    if(isToday)cls+=' today';
+    if(checked)cls+=' checked';
+    else if(missed)cls+=' missed';
+    else if(isFuture)cls+=' future';
+    else if(isRestDay)cls+=' rest-day';
+    html+=`<div class="${cls}">${d}</div>`;
+  }
+  document.getElementById('calGrid').innerHTML=html;
+  var trainDays=0,missDays=0;
+  for(let d=1;d<=daysInMonth;d++){
+    const ds=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if(ds>today)break;
+    const dayDate=new Date(ds);
+    const isWkend=dayDate.getDay()===0||dayDate.getDay()===6;
+    if(isWkend)continue;
+    var chk=false;
+    Object.values(completed).forEach(v=>{if(v.date&&v.date.startsWith(ds))chk=true;});
+    if(chk)trainDays++;
+    else missDays++;
+  }
+  const rate=trainDays+missDays>0?Math.round(trainDays/(trainDays+missDays)*100):0;
+  document.getElementById('calStats').innerHTML=`
+    <div class="cal-stat"><div class="num" style="color:var(--green)">${trainDays}</div><div class="label">已训练</div></div>
+    <div class="cal-stat"><div class="num" style="color:var(--red)">${missDays}</div><div class="label">缺勤</div></div>
+    <div class="cal-stat"><div class="num" style="color:var(--blue)">${rate}%</div><div class="label">出勤率</div></div>
+  `;
+}
+
+document.getElementById('calPrev').onclick=()=>{calMonth--;if(calMonth<0){calMonth=11;calYear--;}renderCalendar();};
+document.getElementById('calNext').onclick=()=>{calMonth++;if(calMonth>11){calMonth=0;calYear++;}renderCalendar();};
+
+// ===== Weight Tracker Tab =====
+function renderWeightTracker() {
+  const h=profile.height||170;
+  document.getElementById('hInput').value=h;
+  const latest=weightData.length?weightData[weightData.length-1]:null;
+  if(latest){
+    const bmi=latest.weight/((h/100)*(h/100));
+    document.getElementById('bmiValue').textContent=bmi.toFixed(1);
+    var tag='normal',text='正常';
+    if(bmi<18.5){tag='underweight';text='偏瘦';}
+    else if(bmi<24){tag='normal';text='正常';}
+    else if(bmi<28){tag='overweight';text='偏重';}
+    else{tag='obese';text='肥胖';}
+    const bmiTag=document.getElementById('bmiTag');
+    bmiTag.textContent=text; bmiTag.className='bmi-tag '+tag; bmiTag.style.display='inline-block';
+  } else {
+    document.getElementById('bmiValue').textContent='--';
+    document.getElementById('bmiTag').style.display='none';
+  }
+  renderWeightChart();
+  renderWeightList();
+}
+
+function renderWeightChart() {
+  const canvas=document.getElementById('weightChart');
+  const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=canvas.offsetWidth*dpr;
+  canvas.height=180*dpr;
+  ctx.scale(dpr,dpr);
+  const w=canvas.offsetWidth, h=180;
+  ctx.clearRect(0,0,w,h);
+  if(weightData.length<2){
+    ctx.fillStyle='#A0AEC0';ctx.font='13px Noto Sans SC';ctx.textAlign='center';
+    ctx.fillText('至少记录2次体重后显示趋势图',w/2,h/2);return;
+  }
+  const sorted=[...weightData].sort((a,b)=>a.date.localeCompare(b.date));
+  const weights=sorted.map(d=>d.weight);
+  const minW=Math.floor(Math.min(...weights))-1;
+  const maxW=Math.ceil(Math.max(...weights))+1;
+  const range=maxW-minW||1;
+  const pad={top:20,bottom:30,left:36,right:16};
+  const cw=w-pad.left-pad.right, ch=h-pad.top-pad.bottom;
+
+  ctx.strokeStyle='rgba(0,0,0,0.05)';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=pad.top+(ch/4)*i;
+    ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(w-pad.right,y);ctx.stroke();
+    ctx.fillStyle='#A0AEC0';ctx.font='10px Noto Sans SC';ctx.textAlign='right';
+    ctx.fillText((maxW-(range/4)*i).toFixed(0),pad.left-6,y+3);
+  }
+
+  ctx.beginPath();ctx.strokeStyle='#10B981';ctx.lineWidth=2.5;ctx.lineJoin='round';
+  sorted.forEach((d,i)=>{
+    const x=pad.left+(i/(sorted.length-1))*cw;
+    const y=pad.top+((maxW-d.weight)/range)*ch;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+  });
+  ctx.stroke();
+
+  const lastX=pad.left+cw;
+  ctx.lineTo(lastX,pad.top+ch);ctx.lineTo(pad.left,pad.top+ch);ctx.closePath();
+  const grad=ctx.createLinearGradient(0,pad.top,0,h-pad.bottom);
+  grad.addColorStop(0,'rgba(16,185,129,0.15)');grad.addColorStop(1,'rgba(16,185,129,0)');
+  ctx.fillStyle=grad;ctx.fill();
+
+  sorted.forEach((d,i)=>{
+    const x=pad.left+(i/(sorted.length-1))*cw;
+    const y=pad.top+((maxW-d.weight)/range)*ch;
+    ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fillStyle='#10B981';ctx.fill();
+    ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();
+  });
+
+  ctx.fillStyle='#A0AEC0';ctx.font='9px Noto Sans SC';ctx.textAlign='center';
+  const step=Math.max(1,Math.floor(sorted.length/5));
+  sorted.forEach((d,i)=>{
+    if(i%step===0||i===sorted.length-1){
+      const x=pad.left+(i/(sorted.length-1))*cw;
+      ctx.fillText(shortDate(d.date),x,h-8);
+    }
+  });
+}
+
+function renderWeightList() {
+  const sorted=[...weightData].sort((a,b)=>b.date.localeCompare(a.date));
+  document.getElementById('weightList').innerHTML=sorted.length?sorted.map((d,i)=>`
+    <div class="weight-item"><div class="wi-left"><span class="wi-val">${d.weight}</span><span class="wi-unit">kg</span></div>
+    <span class="wi-date">${d.date}</span><button class="wi-del" data-idx="${i}">✕</button></div>
+  `).join(''):'<div class="empty-state"><div class="icon">⚖️</div><p>还没有记录体重</p></div>';
+  document.getElementById('weightList').querySelectorAll('.wi-del').forEach(btn=>{
+    btn.onclick=()=>{
+      const sorted2=[...weightData].sort((a,b)=>b.date.localeCompare(a.date));
+      const toDel=sorted2[parseInt(btn.dataset.idx)];
+      weightData=weightData.filter(d=>!(d.date===toDel.date&&d.weight===toDel.weight));
+      saveData('weight',weightData);
+      renderWeightTracker(); checkAchievements();
+    };
+  });
+}
+
+document.getElementById('addWeight').onclick=()=>{
+  const wv=parseFloat(document.getElementById('wInput').value);
+  const hv=parseInt(document.getElementById('hInput').value);
+  if(!wv||wv<20||wv>300)return;
+  if(hv&&hv>=100){profile.height=hv;saveData('profile',profile);}
+  const today=todayStr();
+  const existing=weightData.findIndex(d=>d.date===today);
+  if(existing>=0)weightData[existing].weight=wv;
+  else weightData.push({date:today,weight:wv});
+  weightData.sort((a,b)=>a.date.localeCompare(b.date));
+  saveData('weight',weightData);
+  document.getElementById('wInput').value='';
+  renderWeightTracker(); checkAchievements();
+};
+
+// ===== Tips Tab: Personalized Training Guide =====
+function renderTipsTab() {
+  const el = document.getElementById('tipsContent');
+  const w = getLatestWeight();
+  const h = profile.height || 170;
+  const age = parseInt(profile.age) || 0;
+  const gender = profile.gender || '';
+  const activity = parseInt(profile.activityLevel) || 0;
+  const hasFullData = gender && age && w && h && activity;
+
+  if (!hasFullData) {
+    el.innerHTML = `
+      <div class="card" style="text-align:center;padding:30px 20px;">
+        <div style="font-size:48px;margin-bottom:12px;">🧬</div>
+        <h3 style="justify-content:center;">个性化运动指导</h3>
+        <p style="color:var(--text-muted);font-size:13px;margin-top:8px;">
+          请先在「<span class="go-diet-link" onclick="document.querySelector('[data-tab=diet]').click()">饮食方案</span>」Tab中填写完整的体质数据，<br>系统将根据你的体质生成专属的运动指导方案。
+        </p>
+      </div>
+      <div class="card">
+        <h3>🎒 通用装备推荐</h3>
+        <ul class="diet-list">
+          <li>拳击手套 12-16oz（训练）+ 绑手带 4.5m</li>
+          <li>跳绳（竞速钢丝绳最佳）</li>
+          <li>训练服：速干透气面料，宽松适度</li>
+          <li>运动鞋：平底或薄底训练鞋，增强地面反馈</li>
+          <li>护齿（如有实战环节）</li>
+          <li>泡沫轴 / 筋膜枪（恢复用）</li>
+        </ul>
+      </div>`;
+    return;
+  }
+
+  const bmi = w / ((h / 100) * (h / 100));
+  const bodyType = getBodyType(bmi);
+  const maxHR = 220 - age;
+  const fatBurnLow = Math.round(maxHR * 0.6);
+  const fatBurnHigh = Math.round(maxHR * 0.7);
+  const cardioLow = Math.round(maxHR * 0.7);
+  const cardioHigh = Math.round(maxHR * 0.8);
+
+  var html = '';
+
+  // Block 1: Profile Summary
+  html += `<div class="card">
+    <h3><span class="icon">🧬</span>你的运动画像</h3>
+    <div class="guide-profile-grid">
+      <div class="guide-profile-item"><div class="gp-val" style="color:var(--${bodyType==='obese'?'red':bodyType==='overweight'?'orange':bodyType==='underweight'?'yellow':'green'})">${bmi.toFixed(1)}</div><div class="gp-lbl">BMI</div></div>
+      <div class="guide-profile-item"><div class="gp-val" style="color:var(--blue)">${maxHR}</div><div class="gp-lbl">最大心率</div></div>
+      <div class="guide-profile-item"><div class="gp-val" style="color:var(--green)">${fatBurnLow}-${fatBurnHigh}</div><div class="gp-lbl">燃脂心率</div></div>
+      <div class="guide-profile-item"><div class="gp-val" style="color:var(--orange)">${cardioLow}-${cardioHigh}</div><div class="gp-lbl">有氧心率</div></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;">
+      <span class="guide-sport-tag ${bodyType==='obese'||bodyType==='overweight'?'caution':'recommend'}">${getBodyTypeEmoji(bodyType)} ${getBodyTypeName(bodyType)}体质</span>
+      <span class="guide-sport-tag recommend">${gender==='male'?'♂':'♀'} ${age}岁</span>
+      <span class="guide-sport-tag recommend">🏃 ${getActivityName(activity)}</span>
+    </div>
+  </div>`;
+
+  // Block 2: Body-type specific training guidance
+  html += `<div class="card">
+    <h3><span class="icon">🎯</span>适合你的运动方式</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;">`;
+
+  if (bodyType === 'obese') {
+    html += `
+      <span class="guide-sport-tag recommend">✅ 快走/慢跑</span>
+      <span class="guide-sport-tag recommend">✅ 椭圆机</span>
+      <span class="guide-sport-tag recommend">✅ 游泳</span>
+      <span class="guide-sport-tag recommend">✅ 基础拳击技术</span>
+      <span class="guide-sport-tag avoid">❌ 跳绳</span>
+      <span class="guide-sport-tag avoid">❌ 波比跳</span>
+      <span class="guide-sport-tag avoid">❌ 深蹲跳/跳跃</span>
+      <span class="guide-sport-tag caution">⚠️ 久坐需更多热身时间</span>`;
+  } else if (bodyType === 'overweight') {
+    html += `
+      <span class="guide-sport-tag recommend">✅ 散打拳击</span>
+      <span class="guide-sport-tag recommend">✅ 慢跑</span>
+      <span class="guide-sport-tag recommend">✅ 基础体能训练</span>
+      <span class="guide-sport-tag recommend">✅ 适度HIIT(30秒)</span>
+      <span class="guide-sport-tag caution">⚠️ 跳跃类适量降低</span>
+      <span class="guide-sport-tag caution">⚠️ 循序渐进增加强度</span>`;
+  } else if (bodyType === 'normal') {
+    html += `
+      <span class="guide-sport-tag recommend">✅ 完整武术训练</span>
+      <span class="guide-sport-tag recommend">✅ HIIT搏击</span>
+      <span class="guide-sport-tag recommend">✅ 拳击/散打技术</span>
+      <span class="guide-sport-tag recommend">✅ 体能循环训练</span>
+      <span class="guide-sport-tag recommend">✅ 标准递进计划</span>`;
+  } else {
+    html += `
+      <span class="guide-sport-tag recommend">✅ 力量训练为主</span>
+      <span class="guide-sport-tag recommend">✅ 拳击技术训练</span>
+      <span class="guide-sport-tag recommend">✅ 散打腿法训练</span>
+      <span class="guide-sport-tag recommend">✅ 适量有氧(20-30min)</span>
+      <span class="guide-sport-tag caution">⚠️ HIIT频率降低</span>
+      <span class="guide-sport-tag caution">⚠️ 保证充足热量摄入</span>`;
+  }
+  html += `</div></div>`;
+
+  // Block 3: Key cautions by body type/age/gender
+  html += `<div class="card">
+    <h3><span class="icon">⚠️</span>重点注意事项</h3>
+    <ul class="diet-list">`;
+
+  if (bodyType === 'obese') {
+    html += `
+      <li>膝关节保护优先：避免所有双脚离地跳跃动作，已有替代动作提示</li>
+      <li>训练强度应缓慢递增，前2周以适应为主，不要追求完成度</li>
+      <li>如有关节不适感（非肌肉酸痛），立即停止并休息</li>
+      <li>有氧训练心率不超过燃脂心率上限 ${fatBurnHigh} 次/分</li>`;
+  } else if (bodyType === 'overweight') {
+    html += `
+      <li>循序渐进：前3周重点关注动作标准性，而非训练量</li>
+      <li>跳跃动作可适当降低幅度，使用替代动作降低关节压力</li>
+      <li>训练后充分拉伸，每次至少15分钟</li>`;
+  } else if (bodyType === 'underweight') {
+    html += `
+      <li>保证充足热量摄入，不要过度控制饮食</li>
+      <li>力量训练是核心目标，有氧训练适量即可</li>
+      <li>训练后30分钟内补充蛋白质+碳水</li>`;
+  }
+
+  if (age >= 50) {
+    html += `<li>年龄${age}岁：训练前热身至少15分钟，关注关节灵活性</li>
+      <li>如出现胸闷、头晕等不适，立即停止训练</li>`;
+  } else if (age >= 40) {
+    html += `<li>年龄${age}岁：注意关节保护，避免过度冲击动作</li>`;
+  }
+
+  if (gender === 'female') {
+    html += `<li>上肢力量动作（俯卧撑等）可用跪姿替代</li>`;
+  }
+
+  html += `</ul></div>`;
+
+  // Block 4: Weekly rhythm
+  html += `<div class="card">
+    <h3><span class="icon">📅</span>每周训练节奏建议</h3>
+    <div style="margin-top:8px;">`;
+
+  const week1 = WEEKS[0];
+  week1.days.forEach(day => {
+    if (day.type === 'rest') {
+      html += `<div class="guide-week-row rest-row"><div class="gwr-day">${day.name}</div><div class="gwr-rest">😴 ${day.title}</div><div class="gwr-icon">😴</div></div>`;
+    } else {
+      const typeLabel = { punch:'拳击技术', kick:'腿法训练', hiit:'搏击体能', cardio:'有氧恢复' }[day.type] || day.type;
+      html += `<div class="guide-week-row"><div class="gwr-day">${day.name}</div><div class="gwr-type">${typeLabel}</div><div class="gwr-icon">${day.type==='hiit'?'🔥':day.type==='cardio'?'🏃':'🥊'}</div></div>`;
+    }
+  });
+
+  html += `</div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">
+      ${bodyType==='obese'||bodyType==='overweight'?'训练计划已根据体质降低强度，跟随计划即可。':'跟随训练计划Tab中的每周安排执行。'}
+      ${bodyType==='obese'?'建议额外安排1天主动恢复（散步/瑜伽）。':''}
+    </p>
+  </div>`;
+
+  // Block 5: Recovery strategy
+  html += `<div class="card">
+    <h3><span class="icon">🧘</span>恢复策略</h3>
+    <ul class="diet-list">
+      <li>训练后拉伸至少 ${bodyType==='obese'?15:10} 分钟，重点拉伸训练涉及的肌群</li>
+      <li>使用泡沫轴放松紧张的肌筋膜，每个部位 30-60 秒</li>
+      <li>保证每天 ${age>=40?'8-9':'7-8'} 小时睡眠</li>
+      <li>每天饮水 ${bodyType==='obese'?'3-4':bodyType==='overweight'?'3':'2.5'}L，训练日增加 0.5L</li>
+      <li>出现关节疼痛（非肌肉酸痛）立即停止该动作</li>
+    </ul>
+    ${age >= 40 ? '<div class="warning-box"><p>⚠️ 关节疼痛 ≠ 肌肉酸痛。如果膝盖、肩膀、手腕出现刺痛或持续疼痛，请立即停止训练并就医咨询。</p></div>' : ''}
+  </div>`;
+
+  // Block 6: Technical tips (always show)
+  html += `<div class="card">
+    <h3><span class="icon">🥊</span>拳击技术要点</h3>
+    <ul class="diet-list">
+      <li>站姿：双脚与肩同宽，前后站，后脚跟微抬，膝盖微屈</li>
+      <li>握拳：四指卷握，拇指压在食指和中指第二关节上</li>
+      <li>直拳：发力从蹬地开始，转胯送肩，拳面击打目标后迅速收回</li>
+      <li>始终收紧核心，下颚微收，目光注视前方</li>
+      <li>呼吸节奏：出拳呼气，收拳吸气，不可憋气</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🎒</span>装备推荐</h3>
+    <ul class="diet-list">
+      <li>拳击手套 12-16oz（训练）+ 绑手带 4.5m</li>
+      <li>跳绳（竞速钢丝绳最佳）${bodyType==='obese'?' — 可用原地踏步替代':''}</li>
+      <li>训练服：速干透气面料，宽松适度</li>
+      <li>运动鞋：平底或薄底训练鞋，增强地面反馈</li>
+      <li>护齿（如有实战环节）</li>
+      <li>泡沫轴 / 筋膜枪（恢复用）${bodyType==='obese'||bodyType==='overweight'?' — 强烈推荐':''}</li>
+    </ul>
+  </div>`;
+
+  el.innerHTML = html;
+}
+
+// ===== Diet Plan Tab: Body Assessment + Smart Recommendation =====
+function getRecipeTemplates(type) {
+  const base = {
+    obese: {
+      trainDay: {
+        breakfast: [{ label: '鸡蛋2个+燕麦40g+蓝莓', tag: 'A', cal: 380 },{ label: '全麦面包1片+水煮蛋2个+牛奶150ml', tag: 'B', cal: 350 }],
+        lunch: [{ label: '鸡胸肉200g+西兰花150g+糙米80g', tag: 'A', cal: 520 },{ label: '清蒸鱼200g+菠菜+紫薯100g', tag: 'B', cal: 480 }],
+        postWorkout: [{ label: '蛋白粉1勺+香蕉1根', tag: 'A', cal: 220 },{ label: '低脂牛奶250ml+全麦面包1片', tag: 'B', cal: 200 }],
+        dinner: [{ label: '瘦牛肉150g+生菜沙拉+糙米60g', tag: 'A', cal: 450 },{ label: '虾仁200g+炒时蔬+红薯100g', tag: 'B', cal: 420 }],
+      },
+      restDay: {
+        breakfast: [{ label: '鸡蛋2个+燕麦30g+草莓', tag: 'A', cal: 300 },{ label: '全麦面包2片+牛油果半个', tag: 'B', cal: 320 }],
+        lunch: [{ label: '鸡胸肉150g+蔬菜沙拉+糙米60g', tag: 'A', cal: 420 },{ label: '清蒸鲈鱼200g+菠菜+玉米1根', tag: 'B', cal: 400 }],
+        dinner: [{ label: '豆腐200g+虾仁100g+蔬菜+糙米50g', tag: 'A', cal: 380 },{ label: '瘦牛肉120g+西兰花+紫薯80g', tag: 'B', cal: 360 }],
+      },
+    },
+    overweight: {
+      trainDay: {
+        breakfast: [{ label: '全麦面包2片+鸡蛋2个+牛奶150ml', tag: 'A', cal: 420 },{ label: '燕麦50g+蓝莓+无糖酸奶', tag: 'B', cal: 380 }],
+        lunch: [{ label: '糙米100g+鸡胸肉180g+西兰花', tag: 'A', cal: 550 },{ label: '红薯150g+清蒸鱼180g+蔬菜', tag: 'B', cal: 500 }],
+        postWorkout: [{ label: '蛋白粉1勺+香蕉1根', tag: 'A', cal: 220 },{ label: '低脂牛奶300ml+全麦面包1片', tag: 'B', cal: 200 }],
+        dinner: [{ label: '紫薯120g+瘦牛肉150g+生菜沙拉', tag: 'A', cal: 480 },{ label: '杂粮饭80g+虾仁180g+炒时蔬', tag: 'B', cal: 460 }],
+      },
+      restDay: {
+        breakfast: [{ label: '全麦面包1片+鸡蛋2个+豆浆250ml', tag: 'A', cal: 330 },{ label: '燕麦40g+坚果10g+蓝莓', tag: 'B', cal: 350 }],
+        lunch: [{ label: '糙米80g+鸡胸肉150g+蔬菜沙拉', tag: 'A', cal: 450 },{ label: '红薯120g+清蒸鱼150g+西兰花', tag: 'B', cal: 430 }],
+        dinner: [{ label: '豆腐150g+虾仁120g+蔬菜+糙米50g', tag: 'A', cal: 380 },{ label: '瘦牛肉100g+菠菜+玉米1根', tag: 'B', cal: 370 }],
+      },
+    },
+    normal: {
+      trainDay: {
+        breakfast: [{ label: '全麦面包2片+水煮蛋3个(1全蛋2蛋白)', tag: 'A', cal: 450 },{ label: '燕麦50g+蓝莓+无糖酸奶', tag: 'B', cal: 400 }],
+        lunch: [{ label: '糙米饭150g+鸡胸肉200g+西兰花', tag: 'A', cal: 600 },{ label: '红薯200g+清蒸鱼200g+混合蔬菜', tag: 'B', cal: 550 }],
+        postWorkout: [{ label: '蛋白粉1勺+香蕉1根', tag: 'A', cal: 250 },{ label: '低脂牛奶300ml+全麦面包1片', tag: 'B', cal: 200 }],
+        dinner: [{ label: '紫薯150g+瘦牛肉150g+生菜沙拉', tag: 'A', cal: 480 },{ label: '杂粮饭100g+虾仁200g+炒时蔬', tag: 'B', cal: 500 }],
+      },
+      restDay: {
+        breakfast: [{ label: '全麦面包2片+鸡蛋2个+牛奶200ml', tag: 'A', cal: 380 },{ label: '燕麦40g+坚果15g+蜂蜜+蓝莓', tag: 'B', cal: 400 }],
+        lunch: [{ label: '糙米100g+鸡腿肉180g+蔬菜沙拉', tag: 'A', cal: 500 },{ label: '红薯150g+三文鱼150g+西兰花', tag: 'B', cal: 480 }],
+        dinner: [{ label: '杂粮饭80g+虾仁150g+炒时蔬', tag: 'A', cal: 400 },{ label: '紫薯120g+瘦牛肉130g+生菜沙拉', tag: 'B', cal: 420 }],
+      },
+    },
+    underweight: {
+      trainDay: {
+        breakfast: [{ label: '全麦面包3片+鸡蛋3个+牛奶250ml', tag: 'A', cal: 560 },{ label: '燕麦60g+花生酱1勺+香蕉+牛奶', tag: 'B', cal: 520 }],
+        lunch: [{ label: '糙米饭200g+鸡腿肉200g+西兰花+坚果15g', tag: 'A', cal: 720 },{ label: '红薯250g+瘦牛肉200g+蔬菜+橄榄油', tag: 'B', cal: 680 }],
+        postWorkout: [{ label: '蛋白粉1勺+香蕉1根+全麦面包1片', tag: 'A', cal: 320 },{ label: '牛奶400ml+燕麦30g+蜂蜜', tag: 'B', cal: 300 }],
+        dinner: [{ label: '紫薯200g+三文鱼180g+蔬菜沙拉+橄榄油', tag: 'A', cal: 580 },{ label: '杂粮饭150g+鸡腿肉180g+炒时蔬', tag: 'B', cal: 560 }],
+      },
+      restDay: {
+        breakfast: [{ label: '全麦面包3片+鸡蛋3个+牛奶200ml', tag: 'A', cal: 500 },{ label: '燕麦50g+坚果20g+蓝莓+酸奶', tag: 'B', cal: 480 }],
+        lunch: [{ label: '糙米150g+鸡腿肉180g+蔬菜+坚果', tag: 'A', cal: 620 },{ label: '红薯200g+三文鱼150g+西兰花', tag: 'B', cal: 580 }],
+        dinner: [{ label: '杂粮饭120g+瘦牛肉150g+蔬菜沙拉', tag: 'A', cal: 480 },{ label: '紫薯180g+鸡腿肉160g+炒时蔬', tag: 'B', cal: 500 }],
+      },
+    },
+  };
+  return base[type] || base.normal;
+}
+
+function scaleRecipes(recipes, targetCal) {
+  const mealNames = ['breakfast', 'lunch', 'postWorkout', 'dinner'];
+  var totalBase = 0;
+  mealNames.forEach(m => { if (recipes[m] && recipes[m].length > 0) totalBase += recipes[m][0].cal; });
+  if (totalBase === 0) return recipes;
+  const scale = targetCal / totalBase;
+  const scaled = {};
+  mealNames.forEach(m => {
+    if (recipes[m]) { scaled[m] = recipes[m].map(r => ({ ...r, cal: Math.round(r.cal * scale) })); }
+  });
+  return scaled;
+}
+
+function renderDietPlan() {
+  const p = profile;
+  const hasWeight = weightData.length > 0;
+  const weight = hasWeight ? weightData[weightData.length - 1].weight : 0;
+  const height = p.height || 170;
+  const gender = p.gender || '';
+  const age = p.age || '';
+  const activity = p.activityLevel || '';
+  const goalWeight = p.goalWeight || '';
+  const hasFullData = gender && age && weight && height && activity;
+
+  var html = '';
+
+  // Block 1: Body Assessment Form
+  html += `<div class="body-form-card">
+    <h3><span class="icon">🔬</span> 体质档案</h3>
+    <div class="body-form-grid">
+      <div class="body-form-group full">
+        <label>性别</label>
+        <div class="gender-btn-group">
+          <button class="gender-btn ${gender==='male'?'active':''}" data-gender="male">♂ 男性</button>
+          <button class="gender-btn ${gender==='female'?'active':''}" data-gender="female">♀ 女性</button>
+        </div>
+      </div>
+      <div class="body-form-group"><label>年龄</label><input type="number" id="baAge" min="10" max="100" placeholder="25" value="${age}"></div>
+      <div class="body-form-group"><label>身高 (cm)</label><input type="number" id="baHeight" min="100" max="250" placeholder="170" value="${height}"></div>
+      <div class="body-form-group"><label>体重 (kg)</label><input type="number" id="baWeight" step="0.1" min="20" max="300" placeholder="${hasWeight?weight:'70'}" value="${weight||''}"></div>
+      <div class="body-form-group"><label>目标体重 (kg)</label><input type="number" id="baGoalWeight" step="0.1" min="30" max="200" placeholder="${goalWeight||''}" value="${goalWeight||''}"></div>
+      <div class="body-form-group full">
+        <label>活动水平</label>
+        <select id="baActivity">
+          <option value="" ${!activity?'selected':''}>请选择日常活动水平</option>
+          <option value="1" ${activity==='1'?'selected':''}>久坐不动 — 办公室工作，几乎不运动</option>
+          <option value="2" ${activity==='2'?'selected':''}>轻度活动 — 每周运动1-2次</option>
+          <option value="3" ${activity==='3'?'selected':''}>中度活动 — 每周运动3-5次（推荐）</option>
+          <option value="4" ${activity==='4'?'selected':''}>高度活动 — 每天高强度训练</option>
+          <option value="5" ${activity==='5'?'selected':''}>极高活动 — 专业运动员级别</option>
+        </select>
+      </div>
+    </div>
+    <button class="body-save-btn" id="baSave">💾 保存体质数据</button>
+    ${hasFullData && weight ? `<div style="text-align:center;margin-top:12px;">
+      <div class="body-type-badge ${getBodyType(weight/((height/100)*(height/100)))}">
+        ${getBodyTypeEmoji(getBodyType(weight/((height/100)*(height/100))))} ${getBodyTypeName(getBodyType(weight/((height/100)*(height/100))))}
+      </div>
+    </div>` : ''}
+  </div>`;
+
+  // Block 2: TDEE & Nutrition (if full data)
+  if (hasFullData && weight) {
+    const bmi = weight / ((height / 100) * (height / 100));
+    const bodyType = getBodyType(bmi);
+    const bmr = calcBMR(gender, weight, height, parseInt(age));
+    const actMult = getActivityMult(parseInt(activity));
+    const tdee = Math.round(bmr * actMult);
+    const trainDayCal = Math.round(tdee - 400);
+    const restDayCal = Math.round(tdee - 200);
+    const ratios = getNutrientRatios(bodyType);
+    const pG = Math.round((trainDayCal * ratios.protein / 100) / 4);
+    const cG = Math.round((trainDayCal * ratios.carbs / 100) / 4);
+    const fG = Math.round((trainDayCal * ratios.fat / 100) / 9);
+
+    html += `<div class="tdee-grid">
+      <div class="tdee-card"><div class="tdee-val" style="color:var(--blue)">${Math.round(bmr)}</div><div class="tdee-lbl">基础代谢 BMR</div></div>
+      <div class="tdee-card"><div class="tdee-val" style="color:var(--orange)">${tdee}</div><div class="tdee-lbl">日总消耗 TDEE</div></div>
+      <div class="tdee-card"><div class="tdee-val" style="color:var(--green)">${trainDayCal}</div><div class="tdee-lbl">训练日目标</div></div>
+      <div class="tdee-card"><div class="tdee-val" style="color:var(--purple)">${restDayCal}</div><div class="tdee-lbl">休息日目标</div></div>
+    </div>`;
+
+    html += `<div class="card">
+      <h3><span class="icon">🧬</span>训练日营养素分配</h3>
+      <div class="nutrient-bar-wrap">
+        <div class="nutrient-row"><span class="nutrient-label">蛋白质</span><div class="nutrient-track"><div class="nutrient-fill protein" style="width:${ratios.protein}%">${ratios.protein}%</div></div><span class="nutrient-grams">${pG}g</span></div>
+        <div class="nutrient-row"><span class="nutrient-label">碳水</span><div class="nutrient-track"><div class="nutrient-fill carbs" style="width:${ratios.carbs}%">${ratios.carbs}%</div></div><span class="nutrient-grams">${cG}g</span></div>
+        <div class="nutrient-row"><span class="nutrient-label">脂肪</span><div class="nutrient-track"><div class="nutrient-fill fat" style="width:${ratios.fat}%">${ratios.fat}%</div></div><span class="nutrient-grams">${fG}g</span></div>
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">热量缺口约 ${tdee - trainDayCal} kcal/训练日，${tdee - restDayCal} kcal/休息日</div>
+    </div>`;
+
+    const recipes = getRecipeTemplates(bodyType);
+    const scaledTrain = scaleRecipes(recipes.trainDay, trainDayCal);
+    const scaledRest = scaleRecipes(recipes.restDay, restDayCal);
+    const mealMeta = { breakfast:{icon:'🌅',name:'早餐'},lunch:{icon:'☀️',name:'午餐'},postWorkout:{icon:'⚡',name:'训练后加餐'},dinner:{icon:'🌙',name:'晚餐'} };
+
+    html += `<div class="recipe-section"><div class="recipe-section-header"><span class="rs-icon">🥊</span> 训练日推荐方案 <span style="font-size:12px;color:var(--text-muted);font-weight:400;margin-left:auto;">${trainDayCal} kcal</span></div>`;
+    ['breakfast','lunch','postWorkout','dinner'].forEach(meal => {
+      const m = mealMeta[meal]; const opts = scaledTrain[meal] || [];
+      html += `<div class="recipe-meal"><div class="recipe-meal-header"><span class="rm-name">${m.icon} ${m.name}</span><span class="rm-cal">${opts[0]?opts[0].cal:0} kcal</span></div><div class="recipe-meal-body">${opts.map(o=>`<div class="recipe-option"><span class="ro-label"><span class="ro-tag${o.tag==='B'?' b':''}">${o.tag}</span> ${o.label}</span><span class="ro-cal">${o.cal}kcal</span></div>`).join('')}</div></div>`;
+    });
+    html += `</div>`;
+
+    html += `<div class="recipe-section"><div class="recipe-section-header"><span class="rs-icon">🧘</span> 休息日推荐方案 <span style="font-size:12px;color:var(--text-muted);font-weight:400;margin-left:auto;">${restDayCal} kcal</span></div>`;
+    ['breakfast','lunch','dinner'].forEach(meal => {
+      const m = mealMeta[meal]; const opts = scaledRest[meal] || [];
+      html += `<div class="recipe-meal"><div class="recipe-meal-header"><span class="rm-name">${m.icon} ${m.name}</span><span class="rm-cal">${opts[0]?opts[0].cal:0} kcal</span></div><div class="recipe-meal-body">${opts.map(o=>`<div class="recipe-option"><span class="ro-label"><span class="ro-tag${o.tag==='B'?' b':''}">${o.tag}</span> ${o.label}</span><span class="ro-cal">${o.cal}kcal</span></div>`).join('')}</div></div>`;
+    });
+    html += `</div>`;
+
+    html += `<div class="diet-guide-card"><h4>🎯 你的体质策略：${getBodyTypeName(bodyType)}</h4><ul class="diet-list">`;
+    if (bodyType === 'obese' || bodyType === 'overweight') {
+      html += `<li>蛋白质占比提升至35%，优先保护肌肉在减脂过程中不流失</li><li>碳水占比降至35%，选择低GI碳水（糙米、燕麦、红薯）</li><li>每餐先吃蔬菜和蛋白质，最后吃碳水，有效控制血糖波动</li><li>避免精制碳水和含糖饮料，液体热量最容易导致超标</li><li>训练后30分钟内补充蛋白质，促进肌肉修复</li>`;
+    } else if (bodyType === 'underweight') {
+      html += `<li>碳水占比提升至45%，确保训练有充足能量</li><li>适当增加优质脂肪（坚果、牛油果、橄榄油），提高热量密度</li><li>训练后加餐不可省略，这是增肌关键窗口</li><li>少食多餐，每3小时进食一次，增加总摄入量</li><li>可加入蜂蜜、香蕉等天然高热量食物</li>`;
+    } else {
+      html += `<li>均衡营养素配比：蛋白30%/碳水40%/脂肪30%</li><li>碳水围绕训练时间安排，训练前中后适量补充</li><li>热量缺口控制在300-500kcal，不要过度节食</li><li>每天至少饮水2.5L，训练日增加至3L</li><li>训练前1.5-2小时进食，训练后30分钟内补充蛋白质</li>`;
+    }
+    html += `</ul></div>`;
+  } else {
+    html += `<div class="diet-guide-card" style="text-align:center;padding:30px 20px;">
+      <div style="font-size:48px;margin-bottom:12px;">🔬</div>
+      <h4 style="justify-content:center;">填写体质数据获得个性化推荐</h4>
+      <p style="color:var(--text-muted);font-size:13px;margin-top:8px;">请在上方表单中填写完整的性别、年龄、身高、体重和活动水平，系统将根据你的体质精确计算每日热量需求，并生成个性化的训练日/休息日食谱方案。</p>
+      ${!hasWeight?'<p style="color:var(--orange);font-size:12px;margin-top:10px;">💡 提示：请先在「体重追踪」Tab中记录一次体重</p>':''}
+    </div>`;
+  }
+
+  // General diet avoid list
+  html += `<div class="card">
+    <h3><span class="icon">🚫</span>减脂期避免食物</h3>
+    <ul class="diet-list">
+      <li>含糖饮料、果汁、奶茶（液体热量最容易超标）</li>
+      <li>油炸食品、加工肉类（香肠、培根等）</li>
+      <li>精制碳水过多（白米饭、白面包、糕点）</li>
+      <li>酒精（1g 酒精 = 7 千卡，且影响恢复）</li>
+      <li>睡前 2 小时内不进食</li>
+    </ul>
+  </div>`;
+
+  document.getElementById('dietPlanContent').innerHTML = html;
+
+  // Wire form events
+  document.getElementById('dietPlanContent').querySelectorAll('.gender-btn').forEach(btn => {
+    btn.onclick = () => { document.getElementById('dietPlanContent').querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); };
+  });
+
+  const saveBtn = document.getElementById('baSave');
+  if (saveBtn) {
+    saveBtn.onclick = () => {
+      const activeGender = document.getElementById('dietPlanContent').querySelector('.gender-btn.active');
+      const g = activeGender ? activeGender.dataset.gender : '';
+      const a = document.getElementById('baAge').value;
+      const hv = document.getElementById('baHeight').value;
+      const wv = document.getElementById('baWeight').value;
+      const gw = document.getElementById('baGoalWeight').value;
+      const al = document.getElementById('baActivity').value;
+      if (g) profile.gender = g;
+      if (a) profile.age = parseInt(a);
+      if (hv && parseInt(hv) >= 100) profile.height = parseInt(hv);
+      if (gw) profile.goalWeight = parseFloat(gw);
+      if (al) profile.activityLevel = parseInt(al);
+      saveData('profile', profile);
+      if (wv && parseFloat(wv) > 0) {
+        const wFloat = parseFloat(wv);
+        const today = todayStr();
+        const existing = weightData.findIndex(d => d.date === today);
+        if (existing >= 0) weightData[existing].weight = wFloat;
+        else weightData.push({ date: today, weight: wFloat });
+        weightData.sort((a, b) => a.date.localeCompare(b.date));
+        saveData('weight', weightData);
+      }
+      // Refresh diet plan + training plan + tips
+      renderDietPlan();
+      refreshTrainingPlan();
+    };
+  }
+}
+
+// ===== Achievements Tab =====
+function checkAchievements() {
+  var changed=false;
+  ACHIEVEMENTS.forEach(a=>{
+    if(!achievements[a.id]&&a.check()){
+      achievements[a.id]=todayStr();
+      changed=true;
+    }
+  });
+  if(changed)saveData('achievements',achievements);
+  renderAchievements();
+}
+
+function renderAchievements() {
+  const unlocked=ACHIEVEMENTS.filter(a=>achievements[a.id]).length;
+  document.getElementById('achUnlocked').textContent=unlocked;
+  document.getElementById('achTotal').textContent=ACHIEVEMENTS.length;
+  document.getElementById('achGrid').innerHTML=ACHIEVEMENTS.map(a=>{
+    const done=!!achievements[a.id];
+    return `<div class="ach-card ${done?'unlocked':'locked'}">
+      <div class="ach-icon">${a.icon}</div><div class="ach-name">${a.name}</div><div class="ach-desc">${a.desc}</div>
+      ${done?`<div class="ach-date">✓ ${achievements[a.id]}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+// ===== Dashboard: Weight Chart =====
+function renderDashWeightChart() {
+  const canvas=document.getElementById('dashWeightChart');
+  const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=canvas.offsetWidth*dpr;
+  canvas.height=160*dpr;
+  ctx.scale(dpr,dpr);
+  const w=canvas.offsetWidth, h=160;
+  ctx.clearRect(0,0,w,h);
+  if(weightData.length<2){
+    document.getElementById('dashWeightChartWrap').style.display='none';return;
+  }
+  document.getElementById('dashWeightChartWrap').style.display='block';
+  const sorted=[...weightData].sort((a,b)=>a.date.localeCompare(b.date));
+  const weights=sorted.map(d=>d.weight);
+  const minW=Math.floor(Math.min(...weights))-1;
+  const maxW=Math.ceil(Math.max(...weights))+1;
+  const range=maxW-minW||1;
+  const pad={top:16,bottom:28,left:36,right:12};
+  const cw=w-pad.left-pad.right, ch=h-pad.top-pad.bottom;
+  ctx.strokeStyle='rgba(0,0,0,0.05)';ctx.lineWidth=1;
+  for(let i=0;i<=3;i++){const y=pad.top+(ch/3)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(w-pad.right,y);ctx.stroke();
+    ctx.fillStyle='#A0AEC0';ctx.font='9px Noto Sans SC';ctx.textAlign='right';ctx.fillText((maxW-(range/3)*i).toFixed(0),pad.left-5,y+3);}
+  ctx.beginPath();ctx.strokeStyle='#3B82F6';ctx.lineWidth=2;ctx.lineJoin='round';
+  sorted.forEach((d,i)=>{const x=pad.left+(i/(sorted.length-1))*cw;const y=pad.top+((maxW-d.weight)/range)*ch;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});
+  ctx.stroke();
+  const lastX=pad.left+cw;ctx.lineTo(lastX,pad.top+ch);ctx.lineTo(pad.left,pad.top+ch);ctx.closePath();
+  const grad=ctx.createLinearGradient(0,pad.top,0,h-pad.bottom);grad.addColorStop(0,'rgba(59,130,246,0.12)');grad.addColorStop(1,'rgba(59,130,246,0)');
+  ctx.fillStyle=grad;ctx.fill();
+  sorted.forEach((d,i)=>{const x=pad.left+(i/(sorted.length-1))*cw;const y=pad.top+((maxW-d.weight)/range)*ch;ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle='#3B82F6';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();});
+  ctx.fillStyle='#A0AEC0';ctx.font='9px Noto Sans SC';ctx.textAlign='center';
+  const step=Math.max(1,Math.floor(sorted.length/5));
+  sorted.forEach((d,i)=>{if(i%step===0||i===sorted.length-1){const x=pad.left+(i/(sorted.length-1))*cw;ctx.fillText(shortDate(d.date),x,h-6);}});
+}
+
+// ===== Data Management Tab =====
+function renderDataManagement() {
+  const checkinCount=Object.keys(completed).length;
+  const weightCount=weightData.length;
+  const achCount=Object.keys(achievements).length;
+  document.getElementById('dmStats').innerHTML=`
+    <div class="dm-stat"><div class="dm-val" style="color:var(--green)">${checkinCount}</div><div class="dm-lbl">打卡记录</div></div>
+    <div class="dm-stat"><div class="dm-val" style="color:var(--blue)">${weightCount}</div><div class="dm-lbl">体重记录</div></div>
+    <div class="dm-stat"><div class="dm-val" style="color:var(--orange)">${profile.gender?'已设置':'未设置'}</div><div class="dm-lbl">体质档案</div></div>
+    <div class="dm-stat"><div class="dm-val" style="color:var(--purple)">${achCount}</div><div class="dm-lbl">成就解锁</div></div>
+  `;
+}
+
+document.getElementById('dmExport').onclick=()=>{
+  const data={completed,weightData,profile,achievements,exportDate:new Date().toISOString()};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`martial-fat-loss-backup-${todayStr()}.json`;
+  a.click();URL.revokeObjectURL(url);
+};
+
+document.getElementById('dmImport').onclick=()=>document.getElementById('importFile').click();
+
+document.getElementById('importFile').onchange=(e)=>{
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=(ev)=>{
+    try {
+      const data=JSON.parse(ev.target.result);
+      if(data.completed)completed=data.completed;
+      if(data.weightData)weightData=data.weightData;
+      if(data.profile)profile=data.profile;
+      if(data.achievements)achievements=data.achievements;
+      saveData('plan_done',completed);
+      saveData('weight',weightData);
+      saveData('profile',profile);
+      saveData('achievements',achievements);
+      location.reload();
+    } catch(err){ alert('文件格式错误，请选择正确的备份文件'); }
+  };
+  reader.readAsText(file);
+};
+
+var confirmCallback=null;
+function showConfirm(title,desc,onConfirm){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalDesc').textContent=desc;
+  document.getElementById('confirmModal').classList.add('show');
+  confirmCallback=onConfirm;
+}
+document.getElementById('modalCancel').onclick=()=>document.getElementById('confirmModal').classList.remove('show');
+document.getElementById('modalConfirm').onclick=()=>{
+  document.getElementById('confirmModal').classList.remove('show');
+  if(confirmCallback)confirmCallback();
+  confirmCallback=null;
+};
+
+document.getElementById('dmClear').onclick=()=>{
+  showConfirm('清空所有数据','这将删除所有打卡记录、体重记录、体质档案和成就数据。此操作不可撤销！',()=>{
+    ['plan_done','weight','profile','achievements'].forEach(k=>{
+      try{localStorage.removeItem('martial_'+k);}catch(e){}
+    });
+    completed={};weightData=[];profile={};achievements={};
+    location.reload();
+  });
+};
+
+// ===== Event Listeners =====
+weekSelector.addEventListener('click',(e)=>{
+  const btn=e.target.closest('.week-btn');
+  if(!btn)return;
+  currentWeek=parseInt(btn.dataset.week,10);
+  currentDay=null;
+  renderWeeks();renderDays();renderTrainingDetail();
+  btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+});
+
+dayGrid.addEventListener('click',(e)=>{
+  const card=e.target.closest('.day-card');
+  if(!card||card.classList.contains('rest'))return;
+  currentDay=parseInt(card.dataset.day,10);
+  renderDays();renderTrainingDetail();
+});
+
+// Tab Navigation
+(function() {
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  for (var i = 0; i < tabBtns.length; i++) {
+    (function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+        document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active')});
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        var tab = btn.dataset.tab;
+        if(tab==='progress'||tab==='dashboard'){
+          updateStats(); renderWeeklyChart(); renderDashWeightChart();
+        }
+        if(tab==='calendar')renderCalendar();
+        if(tab==='weight')renderWeightTracker();
+        if(tab==='diet')renderDietPlan();
+        if(tab==='tips')renderTipsTab();
+        if(tab==='achievements')renderAchievements();
+        if(tab==='settings')renderDataManagement();
+        if(tab==='training'){refreshTrainingPlan();}
+        btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+      });
+    })(tabBtns[i]);
+  }
+})();
+
+// ===== Init =====
+renderWeeks();
+renderDays();
+updateStats();
+renderWeeklyChart();
+checkAchievements();
+renderAdaptBadge();
+
+// Auto-select first training day
+for(let i=0;i<7;i++){
+  if(WEEKS[0].days[i].type!=='rest'){currentDay=i;renderDays();renderTrainingDetail();break;}
+}
+
+// Resize handler for charts
+window.addEventListener('resize',()=>{
+  renderWeightChart();renderDashWeightChart();
+});
+</script>
+</body>
+</html>
